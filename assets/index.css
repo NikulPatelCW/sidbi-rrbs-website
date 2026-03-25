@@ -7978,7 +7978,8 @@ body.drawer-open .mobile-drawer {
     /* match main card color */
     background-image: none !important;
     display: block;
-    padding: 24px;
+    /* Inner .loan-main-card-content already has 24px padding (matches .loan-main-card) */
+    padding: 0;
 }
 
 .loan-side-card-new.side-expanded>p {
