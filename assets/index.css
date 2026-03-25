@@ -1031,6 +1031,7 @@ body {
     .mt-\[12px\] {
         margin-top: 12px
     }
+
     .mt-\[16px\] {
         margin-top: 16px
     }
@@ -1663,7 +1664,8 @@ body {
     .w-3\/4 {
         width: 75%
     }
-    .w-1\/2{
+
+    .w-1\/2 {
         width: 50%;
     }
 
@@ -2018,6 +2020,7 @@ body {
     .max-w-\[1280px\] {
         max-width: 1280px
     }
+
     .max-w-\[1440px\] {
         max-width: 1440px
     }
@@ -2318,9 +2321,11 @@ body {
     .justify-center {
         justify-content: center
     }
+
     .justify-start {
         justify-content: flex-start
     }
+
     .justify-end {
         justify-content: end
     }
@@ -5142,138 +5147,6 @@ body {
         }
     }
 
-    .\[\&_\.recharts-cartesian-axis-tick_text\]\:fill-muted-foreground .recharts-cartesian-axis-tick text {
-        fill: var(--muted-foreground)
-    }
-
-    .\[\&_\.recharts-cartesian-grid_line\[stroke\=\'\#ccc\'\]\]\:stroke-border\/50 .recharts-cartesian-grid line[stroke="#ccc"] {
-        stroke: var(--border)
-    }
-
-    @supports (color:color-mix(in lab, red, red)) {
-        .\[\&_\.recharts-cartesian-grid_line\[stroke\=\'\#ccc\'\]\]\:stroke-border\/50 .recharts-cartesian-grid line[stroke="#ccc"] {
-            stroke: color-mix(in oklab, var(--border)50%, transparent)
-        }
-    }
-
-    .\[\&_\.recharts-curve\.recharts-tooltip-cursor\]\:stroke-border .recharts-curve.recharts-tooltip-cursor {
-        stroke: var(--border)
-    }
-
-    .\[\&_\.recharts-dot\[stroke\=\'\#fff\'\]\]\:stroke-transparent .recharts-dot[stroke="#fff"] {
-        stroke: #0000
-    }
-
-    .\[\&_\.recharts-layer\]\:outline-hidden .recharts-layer {
-        --tw-outline-style: none;
-        outline-style: none
-    }
-
-    @media(forced-colors:active) {
-        .\[\&_\.recharts-layer\]\:outline-hidden .recharts-layer {
-            outline-offset: 2px;
-            outline: 2px solid #0000
-        }
-    }
-
-    .\[\&_\.recharts-polar-grid_\[stroke\=\'\#ccc\'\]\]\:stroke-border .recharts-polar-grid [stroke="#ccc"] {
-        stroke: var(--border)
-    }
-
-    .\[\&_\.recharts-radial-bar-background-sector\]\:fill-muted .recharts-radial-bar-background-sector,
-    .\[\&_\.recharts-rectangle\.recharts-tooltip-cursor\]\:fill-muted .recharts-rectangle.recharts-tooltip-cursor {
-        fill: var(--muted)
-    }
-
-    .\[\&_\.recharts-reference-line_\[stroke\=\'\#ccc\'\]\]\:stroke-border .recharts-reference-line [stroke="#ccc"] {
-        stroke: var(--border)
-    }
-
-    .\[\&_\.recharts-sector\]\:outline-hidden .recharts-sector {
-        --tw-outline-style: none;
-        outline-style: none
-    }
-
-    @media(forced-colors:active) {
-        .\[\&_\.recharts-sector\]\:outline-hidden .recharts-sector {
-            outline-offset: 2px;
-            outline: 2px solid #0000
-        }
-    }
-
-    .\[\&_\.recharts-sector\[stroke\=\'\#fff\'\]\]\:stroke-transparent .recharts-sector[stroke="#fff"] {
-        stroke: #0000
-    }
-
-    .\[\&_\.recharts-surface\]\:outline-hidden .recharts-surface {
-        --tw-outline-style: none;
-        outline-style: none
-    }
-
-    @media(forced-colors:active) {
-        .\[\&_\.recharts-surface\]\:outline-hidden .recharts-surface {
-            outline-offset: 2px;
-            outline: 2px solid #0000
-        }
-    }
-
-    .\[\&_\[cmdk-group-heading\]\]\:px-2 [cmdk-group-heading] {
-        padding-inline: calc(var(--spacing)*2)
-    }
-
-    .\[\&_\[cmdk-group-heading\]\]\:py-1\.5 [cmdk-group-heading] {
-        padding-block: calc(var(--spacing)*1.5)
-    }
-
-    .\[\&_\[cmdk-group-heading\]\]\:text-xs [cmdk-group-heading] {
-        font-size: var(--text-xs);
-        line-height: var(--tw-leading, var(--text-xs--line-height))
-    }
-
-    .\[\&_\[cmdk-group-heading\]\]\:font-medium [cmdk-group-heading] {
-        --tw-font-weight: var(--font-weight-medium);
-        font-weight: var(--font-weight-medium)
-    }
-
-    .\[\&_\[cmdk-group-heading\]\]\:text-muted-foreground [cmdk-group-heading] {
-        color: var(--muted-foreground)
-    }
-
-    .\[\&_\[cmdk-group\]\]\:px-2 [cmdk-group] {
-        padding-inline: calc(var(--spacing)*2)
-    }
-
-    .\[\&_\[cmdk-group\]\:not\(\[hidden\]\)_\~\[cmdk-group\]\]\:pt-0 [cmdk-group]:not([hidden])~[cmdk-group] {
-        padding-top: calc(var(--spacing)*0)
-    }
-
-    .\[\&_\[cmdk-input-wrapper\]_svg\]\:h-5 [cmdk-input-wrapper] svg {
-        height: calc(var(--spacing)*5)
-    }
-
-    .\[\&_\[cmdk-input-wrapper\]_svg\]\:w-5 [cmdk-input-wrapper] svg {
-        width: calc(var(--spacing)*5)
-    }
-
-    .\[\&_\[cmdk-input\]\]\:h-12 [cmdk-input] {
-        height: calc(var(--spacing)*12)
-    }
-
-    .\[\&_\[cmdk-item\]\]\:px-2 [cmdk-item] {
-        padding-inline: calc(var(--spacing)*2)
-    }
-
-    .\[\&_\[cmdk-item\]\]\:py-3 [cmdk-item] {
-        padding-block: calc(var(--spacing)*3)
-    }
-
-    .\[\&_\[cmdk-item\]_svg\]\:h-5 [cmdk-item] svg {
-        height: calc(var(--spacing)*5)
-    }
-
-    .\[\&_\[cmdk-item\]_svg\]\:w-5 [cmdk-item] svg {
-        width: calc(var(--spacing)*5)
-    }
 
     .\[\&_p\]\:leading-relaxed p {
         --tw-leading: var(--leading-relaxed);
@@ -5307,16 +5180,6 @@ body {
         border-width: 0
     }
 
-    .\[\&\:has\(\>\.day-range-end\)\]\:rounded-r-md:has(>.day-range-end) {
-        border-top-right-radius: calc(var(--radius) - 2px);
-        border-bottom-right-radius: calc(var(--radius) - 2px)
-    }
-
-    .\[\&\:has\(\>\.day-range-start\)\]\:rounded-l-md:has(>.day-range-start) {
-        border-top-left-radius: calc(var(--radius) - 2px);
-        border-bottom-left-radius: calc(var(--radius) - 2px)
-    }
-
     .\[\&\:has\(\[aria-selected\]\)\]\:rounded-md:has([aria-selected]) {
         border-radius: calc(var(--radius) - 2px)
     }
@@ -5330,8 +5193,7 @@ body {
         border-bottom-left-radius: calc(var(--radius) - 2px)
     }
 
-    .last\:\[\&\:has\(\[aria-selected\]\)\]\:rounded-r-md:last-child:has([aria-selected]),
-    .\[\&\:has\(\[aria-selected\]\.day-range-end\)\]\:rounded-r-md:has([aria-selected].day-range-end) {
+    .last\:\[\&\:has\(\[aria-selected\]\)\]\:rounded-r-md:last-child:has([aria-selected]) {
         border-top-right-radius: calc(var(--radius) - 2px);
         border-bottom-right-radius: calc(var(--radius) - 2px)
     }
@@ -6126,14 +5988,14 @@ html {
 }
 
 .initiative-title {
-    font-family: 'Inter:Semi_Bold', sans-serif;
+    font-family: Inter;
     font-weight: 600;
     font-size: 16px;
     line-height: 1.2;
 }
 
 .initiative-subtitle {
-    font-family: 'Inter:Regular', sans-serif;
+    font-family: Inter;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.2;
@@ -6185,7 +6047,8 @@ html {
     left: 90px;
     position: absolute;
     top: 38px;
-    right: 24px; /* allow fluid width so text doesn't get clipped */
+    right: 24px;
+    /* allow fluid width so text doesn't get clipped */
     width: auto;
     max-width: none;
     display: flex;
@@ -6280,7 +6143,7 @@ html {
 
 .docs-accordion-rail-label {
     color: #fff;
-    font-family: 'Inter:Light', sans-serif;
+    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 300;
@@ -6297,6 +6160,7 @@ html {
         flex-wrap: wrap;
         gap: 20px;
     }
+
     .docs-col-w-277,
     .docs-col-w-242,
     .docs-col-w-302 {
@@ -6305,6 +6169,7 @@ html {
 }
 
 @media (max-width: 900px) {
+
     .docs-col-w-277,
     .docs-col-w-242,
     .docs-col-w-302 {
@@ -6321,7 +6186,12 @@ html {
 
 .docs-accordion-panel--mobile-active {
     background: #0067b9;
+    border-top: 1px solid rgba(255, 255, 255, .22);
     padding: 14px 14px 0;
+}
+
+.docs-accordion-shell--mobile>.docs-accordion-panel--mobile-active:first-child {
+    border-top: none;
 }
 
 .docs-accordion-mobile-header {
@@ -6333,7 +6203,7 @@ html {
 
 .docs-accordion-mobile-title {
     color: #fff;
-    font-family: 'Inter:Medium', sans-serif;
+    font-family: Inter;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.3;
@@ -6347,7 +6217,7 @@ html {
 
 .docs-accordion-mobile-list {
     color: #fff;
-    font-family: 'Inter:Regular', sans-serif;
+    font-family: Inter;
     font-size: 12px;
     line-height: 1.35;
     margin-top: 10px;
@@ -6377,7 +6247,7 @@ html {
 
 .docs-accordion-mobile-row-label {
     color: #fff;
-    font-family: 'Inter:Light', sans-serif;
+    font-family: Inter;
     font-size: 20px;
     font-weight: 300;
     line-height: 1.3;
@@ -6440,7 +6310,7 @@ html {
 
 .faq-item-title {
     flex: 1 1 0%;
-    font-family: 'Inter:Semi_Bold', sans-serif;
+    font-family: Inter;
     font-weight: 600;
     line-height: 22px;
     font-size: 20px;
@@ -6449,7 +6319,7 @@ html {
 
 .faq-item-copy {
     max-width: 952px;
-    font-family: 'Inter:Regular', sans-serif;
+    font-family: Inter;
     font-weight: 400;
     line-height: 1.4;
     font-size: 16px;
@@ -6505,7 +6375,7 @@ html {
 
 .site-footer-description {
     width: 808px;
-    font-family: 'Inter:Regular', sans-serif;
+    font-family: Inter;
     font-weight: 400;
     line-height: 24px;
     font-size: 16px;
@@ -6526,7 +6396,7 @@ html {
 }
 
 .site-footer-contact-text {
-    font-family: 'Inter:Regular', sans-serif;
+    font-family: Inter;
     font-weight: 400;
     line-height: 20px;
     font-size: 14px;
@@ -6550,7 +6420,7 @@ html {
 }
 
 .site-footer-meta {
-    font-family: 'Inter:Regular', sans-serif;
+    font-family: Inter;
     font-weight: 400;
     line-height: 1.4;
     font-size: 14px;
@@ -6564,7 +6434,7 @@ html {
     display: flex;
     align-items: flex-start;
     gap: 24px;
-    font-family: 'Inter:Regular', sans-serif;
+    font-family: Inter;
     font-weight: 400;
     line-height: 1.4;
     font-size: 14px;
@@ -6640,16 +6510,19 @@ html {
     background-position: center;
     background-repeat: no-repeat;
     padding: 40px;
-    min-height: 340px;
+    min-height: 400px;
     display: flex;
     align-items: center;
 }
-.driving-section{
+
+.driving-section {
     background-image: url("./images/about/driving-bg.png");
 }
-.built-section{
+
+.built-section {
     background-image: url("./images/about/built-bg.png");
 }
+
 .about-apex-inner-end {
     justify-content: flex-end;
 }
@@ -6714,7 +6587,7 @@ html {
 .about-stepper-text {
     margin-top: 10px;
     color: #555;
-    font-family: 'Inter:Regular', sans-serif;
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.35;
@@ -6846,13 +6719,16 @@ html {
         gap: 12px;
         margin-top: 24px;
     }
-    .docs-accordion-mobile-leaf{
+
+    .docs-accordion-mobile-leaf {
         max-width: 200px;
     }
+
     .docs-accordion-mobile-icon {
         width: 20px;
         height: 20px;
     }
+
     .docs-accordion-mobile-row-label {
         font-size: 16px;
     }
@@ -7001,9 +6877,10 @@ html {
 
 @media (max-width: 768px) {
     .faq-item-body {
-    width: 100%;
-    padding: 30px 20px;
-}
+        width: 100%;
+        padding: 30px 20px;
+    }
+
     /* Common mobile typography scale */
     .text-\[58px\] {
         font-size: 42px !important;
@@ -7064,11 +6941,725 @@ html {
     }
 }
 
+/* Loan process: digital journey section */
+.loan-journey-section {
+    margin-top: 92px;
+    margin-bottom: 24px;
+}
+
+.loan-journey-shell {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.loan-journey-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+}
+
+.loan-journey-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 14px;
+}
+
+.loan-journey-card {
+    background: #c4e4ff;
+    border-radius: 10px;
+    min-height: 150px;
+    padding: 12px;
+    display: flex;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loan-journey-card--single {
+    grid-column: 1 / 2;
+}
+
+.loan-journey-leaf::before {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 25px;
+    bottom: 0;
+    width: 56%;
+    background-image: url(./images/loan-process/blue-leaf-node-bg.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.loan-journey-image {
+    width: 112px;
+    min-width: 150px;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.loan-journey-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.loan-journey-title {
+    color: #2B2B2B;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    /* 20px */
+}
+
+.loan-journey-copy {
+    color: #333;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    /* 19.6px */
+}
+
+.loan-journey-points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.loan-journey-points li {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: #333;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    /* 19.6px */
+}
+
+.loan-journey-points li img {
+    width: 13px;
+    height: 13px;
+    margin-top: 1px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+    .loan-journey-shell {
+        padding: 0 20px;
+    }
+
+    .loan-journey-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .loan-journey-card--single {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .loan-journey-section {
+        margin-top: 70px;
+    }
+
+    .loan-journey-shell {
+        padding: 0 16px;
+    }
+
+    .loan-journey-card {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .loan-journey-image {
+        width: 96px;
+        min-width: 140px;
+        height: 100%;
+    }
+
+    .loan-journey-title {
+        font-size: 18px;
+    }
+}
+
+/* Improve image placement between small phones and small tablets (~361-600px) */
+@media (max-width: 425px) {
+    .loan-journey-card {
+        align-items: stretch;
+        flex-direction: row;
+    }
+
+    .loan-journey-image {
+        width: 120px;
+        min-width: 120px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+    .loan-journey-leaf::before {
+        content: none;
+    }
+}
+
+/* Very small screens: stack image on top with full width */
+@media (max-width: 360px) {
+    .loan-journey-card {
+        flex-direction: column;
+    }
+
+    .loan-journey-image {
+        width: 100%;
+        min-width: 0;
+        height: 180px;
+        aspect-ratio: auto;
+        object-fit: cover;
+    }    
+}
+
+@media (max-width: 425px) {
+    .about-apex-section .py-\[16px\] {
+        padding-block: 10px !important;
+    }
+
+    .about-apex-section .px-\[18px\] {
+        padding-inline: 10px !important;
+    }
+}
+
 /* Responsive navigation */
 .mobile-navbar,
 .mobile-drawer,
 .mobile-drawer-overlay {
     display: none;
+}
+
+.nav-dropdown {
+    align-items: center;
+    position: relative;
+}
+
+.nav-dropdown-trigger {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 2px;
+    line-height: 1;
+    padding: 0;
+}
+
+.nav-dropdown-menu {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, .12);
+    left: 0;
+    min-width: 250px;
+    opacity: 0;
+    padding: 8px;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    transform: translateY(8px);
+    transition: opacity .18s ease, transform .18s ease;
+    visibility: hidden;
+    z-index: 25;
+}
+
+/* Business loans: design cards section */
+.business-design-section {
+    margin-top: 100px;
+}
+
+.business-design-shell {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.business-design-heading {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+}
+
+.business-design-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.business-design-card {
+    align-items: flex-end;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 12px;
+    display: flex;
+    min-height: 385px;
+    overflow: hidden;
+    padding: 14px 12px;
+    position: relative;
+}
+
+.business-design-card-copy {
+    width: 100%;
+}
+
+.business-design-card-title {
+    color: #fff;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.05;
+    margin: 0;
+}
+
+.business-design-card-subcopy {
+    color: #fff;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 8px 0 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(8px);
+    transition: max-height 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+
+.business-design-card:hover .business-design-card-subcopy,
+.business-design-card:focus-within .business-design-card-subcopy {
+    max-height: 60px;
+    opacity: 0.6;
+    transform: translateY(0);
+}
+
+@media (max-width: 1200px) {
+    .business-design-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .business-design-card {
+        min-height: 280px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .business-design-section {
+        margin-top: 70px;
+    }
+
+    .business-design-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .business-design-card {
+        min-height: 220px;
+        padding: 12px 10px;
+    }
+
+    .business-design-card-title {
+        font-size: 14px;
+    }
+    .business-design-card-subcopy{
+        font-size: 12px;
+    }
+}
+
+/* Business loans: financing needs section */
+.business-financing-section {
+    margin-top: 100px;
+}
+
+.business-financing-shell {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+}
+
+.business-financing-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+}
+
+.business-financing-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 677px;
+    width: 100%;
+}
+
+/* Four-column variant used in loan-against-property page */
+.business-financing-grid--four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 1440px;
+}
+
+.business-financing-card {
+    border-radius: 14px;
+    color: #fff;
+    min-height: 230px;
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.business-financing-card--green {
+    background: #5cb85d;
+}
+
+.business-financing-card--blue {
+    background: #0067b9;
+}
+
+.business-financing-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.business-financing-card-title {
+    margin: 14px 0 0;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.05;
+}
+
+.business-financing-card-subcopy {
+    margin: 10px 0 0;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.3;
+    opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+    .business-financing-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .business-financing-grid--four {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 760px;
+    }
+}
+
+@media (max-width: 900px) {
+    .business-financing-grid--four {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+    }
+}
+
+@media (max-width: 768px) {
+    .business-financing-section {
+        margin-top: 70px;
+    }
+
+    .business-financing-card {
+        min-height: 210px;
+        padding: 18px 16px;
+    }
+
+    .business-financing-card-title {
+        font-size: 18px;
+    }
+
+    .business-financing-card-subcopy {
+        font-size: 13px;
+    }
+}
+
+/* Working capital: green leaf overlay + constrained copy */
+.financing-leaf {
+    position: relative;
+    overflow: hidden;
+}
+
+.financing-leaf::after {
+    content: "";
+    position: absolute;
+    right: 55px;
+    bottom: -20px;
+    top: 20px;
+    width: 60%;
+    background-image: url(./images/loans/green-leaf-node-bg.svg);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.financing-leaf .business-financing-card-subcopy {
+    max-width: 260px;
+}
+
+/* Business loans: eligibility section */
+.eligibility-section {
+    margin-top: 100px;
+}
+
+.eligibility-shell {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.eligibility-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    text-align: center;
+}
+
+.eligibility-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.eligibility-card {
+    background: #e6f2ff;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 510px;
+}
+
+.eligibility-card-media {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+}
+
+.eligibility-card-bottom {
+    background: #0067b9;
+    color: #fff;
+    left: 0;
+    position: absolute;
+    padding: 18px 20px 16px;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    min-height: 190px;
+}
+
+.eligibility-card-bottom--blue {
+    background: #0067b9;
+}
+
+.eligibility-bottom-title {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+}
+
+.eligibility-bottom-desc {
+    margin: 0 0 10px 0;
+    font-family: Inter;
+    font-size: 16px;
+    line-height: 1.3;
+    opacity: .75;
+}
+
+.eligibility-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 12px;
+}
+
+.eligibility-list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.eligibility-list li {
+    position: relative;
+    padding-left: 14px;
+    padding-bottom: 8px;
+    font-family: Inter;
+    font-size: 16px;
+    line-height: 1.2;
+    opacity: .6;
+}
+
+.eligibility-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #bfe2ff;
+}
+
+@media (max-width: 1024px) {
+    .eligibility-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .eligibility-card {
+        height: 460px;
+    }
+
+    .eligibility-card-bottom {
+        min-height: 170px;
+    }
+}
+
+/* Business loans: explore other loans */
+.explore-loans-section {
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+.explore-loans-shell {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.explore-loans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.explore-loans-card {
+    background: #c4e4ff;
+    border-radius: 12px;
+    color: #2b2b2b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 76px;
+    padding: 0 20px;
+    text-decoration: none;
+}
+
+.explore-loans-card span {
+    color: #333;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    /* 20px */
+}
+
+.explore-loans-card img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+    .explore-loans-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.desktop-navbar {
+    overflow: visible;
+    position: relative;
+    z-index: 30;
+}
+
+
+.nav-dropdown-menu a {
+    border-radius: 8px;
+    color: #1f2937;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    padding: 10px 12px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.nav-dropdown.is-open .nav-dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.nav-dropdown.is-open .nav-dropdown-chevron {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-chevron {
+    transition: transform .18s ease;
 }
 
 .mobile-navbar-inner {
@@ -7168,6 +7759,35 @@ html {
     padding: 14px 0;
 }
 
+.mobile-products-trigger {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #e5e7eb;
+    color: #111827;
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    justify-content: space-between;
+    padding: 14px 0;
+    text-align: left;
+    width: 100%;
+}
+
+.mobile-products-list {
+    display: none;
+}
+
+.mobile-products-list.is-open {
+    display: block;
+}
+
+.mobile-products-list a {
+    color: #374151;
+    font-size: 14px;
+    padding: 10px 0 10px 14px;
+}
+
 body.drawer-open {
     overflow: hidden;
 }
@@ -7245,7 +7865,7 @@ body.drawer-open .mobile-drawer {
 .loan-main-collapsed-label {
     color: #fff;
     display: none;
-    font-family: Inter, sans-serif;
+    font-family: Inter;
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
@@ -7304,9 +7924,9 @@ body.drawer-open .mobile-drawer {
     transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
 }
 
-.loan-side-card-new > p {
+.loan-side-card-new>p {
     color: #fff;
-    font-family: Inter, sans-serif;
+    font-family: Inter;
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
@@ -7321,12 +7941,15 @@ body.drawer-open .mobile-drawer {
 .loan-products-grid.active-1 {
     grid-template-columns: minmax(0, 2.5fr) repeat(3, minmax(0, .80fr));
 }
+
 .loan-products-grid.active-2 {
     grid-template-columns: minmax(0, .80fr) minmax(0, 2.5fr) minmax(0, .80fr) minmax(0, .80fr);
 }
+
 .loan-products-grid.active-3 {
     grid-template-columns: minmax(0, .80fr) minmax(0, .80fr) minmax(0, 2.5fr) minmax(0, .80fr);
 }
+
 .loan-products-grid.active-4 {
     grid-template-columns: minmax(0, .80fr) minmax(0, .80fr) minmax(0, .80fr) minmax(0, 2.5fr);
 }
@@ -7336,6 +7959,7 @@ body.drawer-open .mobile-drawer {
     opacity: 0;
     pointer-events: none;
 }
+
 .loan-main-card.collapsed .loan-main-card-bg {
     background: linear-gradient(to bottom, rgba(16, 28, 66, 0) 23.511%, #101c42 99.765%), url('./images/about/manu-1-bg.png');
     background-position: center;
@@ -7343,20 +7967,24 @@ body.drawer-open .mobile-drawer {
     background-size: cover;
     opacity: 1;
 }
+
 .loan-main-card.collapsed .loan-main-collapsed-label {
     display: block;
 }
 
 /* Side card expanded to behave like main card */
 .loan-side-card-new.side-expanded {
-    background-color: #0067b9 !important; /* match main card color */
+    background-color: #0067b9 !important;
+    /* match main card color */
     background-image: none !important;
     display: block;
     padding: 24px;
 }
-.loan-side-card-new.side-expanded > p {
+
+.loan-side-card-new.side-expanded>p {
     display: none;
 }
+
 .loan-side-card-new.side-expanded .loan-main-card-bg {
     position: absolute;
     inset: 0;
@@ -7364,6 +7992,7 @@ body.drawer-open .mobile-drawer {
     opacity: .5;
     pointer-events: none;
 }
+
 .loan-side-card-new .loan-main-card-content--clone {
     height: 100%;
     position: relative;
@@ -7376,6 +8005,7 @@ body.drawer-open .mobile-drawer {
         gap: 16px;
         grid-template-columns: 1fr;
     }
+
     .loan-products-grid.active-1,
     .loan-products-grid.active-2,
     .loan-products-grid.active-3,
@@ -7416,15 +8046,15 @@ body.drawer-open .mobile-drawer {
         justify-content: start;
     }
 
-    .loan-side-card-new > p {
+    .loan-side-card-new>p {
         font-size: 20px;
         line-height: 1.2;
         transform: none;
         writing-mode: horizontal-tb;
-        
+
     }
 
-    .loan-side-card-new > p br {
+    .loan-side-card-new>p br {
         display: none;
     }
 }
@@ -7434,13 +8064,15 @@ body.drawer-open .mobile-drawer {
         padding: 24px;
     }
 
-    .faq-item-title{
+    .faq-item-title {
         font-size: 16px;
     }
-    .faq-item-copy{
+
+    .faq-item-copy {
         font-size: 14px;
     }
-    .faq-item-head{
+
+    .faq-item-head {
         img {
             width: 20px !important;
             height: 20px !important;
@@ -7470,7 +8102,7 @@ body.drawer-open .mobile-drawer {
         min-height: 180px;
     }
 
-    .loan-side-card-new > p {
+    .loan-side-card-new>p {
         font-size: 24px;
     }
 
@@ -7528,7 +8160,7 @@ body.drawer-open .mobile-drawer {
 
 .contact-info-label {
     color: #555;
-    font-family: 'Inter:Regular', sans-serif;
+    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -7537,7 +8169,7 @@ body.drawer-open .mobile-drawer {
 
 .contact-info-value {
     color: #2b2b2b;
-    font-family: 'Inter:Semi_Bold', sans-serif;
+    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -7622,7 +8254,7 @@ body.drawer-open .mobile-drawer {
 
 .contact-map-title {
     color: #2b2b2b;
-    font-family: 'Inter:Semi_Bold', sans-serif;
+    font-family: Inter;
     font-size: 22px;
     font-weight: 600;
     line-height: 1.1;
@@ -7630,7 +8262,7 @@ body.drawer-open .mobile-drawer {
 
 .contact-map-address {
     color: #4e4e4e;
-    font-family: 'Inter:Regular', sans-serif;
+    font-family: Inter;
     font-size: 14px;
     line-height: 1.35;
     margin-top: 6px;
@@ -7664,7 +8296,7 @@ body.drawer-open .mobile-drawer {
 
 .contact-form-title {
     color: #2b2b2b;
-    font-family: 'Inter:Regular', sans-serif;
+    font-family: Inter;
     font-size: 32px;
     font-weight: 400;
     letter-spacing: -0.88px;
@@ -7672,7 +8304,7 @@ body.drawer-open .mobile-drawer {
 }
 
 .contact-form-title span {
-    font-family: 'Inter:Semi_Bold', sans-serif;
+    font-family: Inter;
     font-weight: 600;
 }
 
@@ -7689,7 +8321,7 @@ body.drawer-open .mobile-drawer {
     border: 1px solid transparent;
     border-radius: 12px;
     color: #2b2b2b;
-    font-family: 'Inter:Regular', sans-serif;
+    font-family: Inter;
     font-size: 14px;
     line-height: 1.2;
     outline: none;
@@ -7715,7 +8347,7 @@ body.drawer-open .mobile-drawer {
     color: #fff;
     cursor: pointer;
     display: inline-flex;
-    font-family: 'Inter:Semi_Bold', sans-serif;
+    font-family: Inter;
     font-size: 14px;
     font-weight: 600;
     height: 36px;

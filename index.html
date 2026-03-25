@@ -6,116 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SIDBI & RRB Partnership</title>
   <link rel="stylesheet" href="./assets/index.css" />
+  <script src="./assets/common-layout.js" defer></script>
 </head>
 
 <body>
   <div class="bg-white min-h-screen w-full flex flex-col items-center overflow-x-hidden" data-name="1">
     <div class="bg-white overflow-clip w-full">
-      <div class="bg-[#0971b8] w-full px-[80px] py-[6px] top-utility-bar">
-        <div class="flex gap-[32px] items-center justify-end">
-          <div class="content-stretch flex gap-[2px] items-center relative shrink-0">
-            <div class="relative shrink-0 size-[16px]" data-name="uil:language">
-              <img src="./assets/images/uil_language.svg" alt="language" class="w-full h-full object-cover">
-            </div>
-            <p
-              class="font-[&#x27;Inter:Semi_Bold&#x27;,sans-serif] font-semibold leading-[20px] not-italic relative shrink-0 text-[12px] text-right text-white whitespace-nowrap">
-              English</p>
-          </div>
-          <div class="content-stretch flex gap-[2px] items-center relative shrink-0">
-            <div class="relative shrink-0 size-[16px]" data-name="material-symbols:call">
-              <img src="./assets/images/call.svg" alt="call" class="w-full h-full object-cover">
-            </div>
-            <a href="callto:+912226103303"
-              class="font-[&#x27;Inter:Semi_Bold&#x27;,sans-serif] font-semibold leading-[20px] not-italic relative shrink-0 text-[12px] text-right text-white whitespace-nowrap">
-              (+91-22) 26103303</a>
-          </div>
-        </div>
-      </div>
+      <div id="site-header"></div>
 
-      <div
-        class="bg-white content-stretch flex flex-col items-start overflow-clip px-[80px] py-[20px] w-full desktop-navbar">
-        <div class="content-stretch flex items-center justify-between relative shrink-0 w-full">
-          <a href="./index.html" aria-label="Home" class="h-[60px] relative shrink-0 w-[241.364px]" data-name="image 110">
-            <div class="absolute inset-0 overflow-hidden pointer-events-none"><img alt=""
-                class="absolute h-full left-[-9.25%] max-w-none top-0 w-[120.23%]"
-                src="./assets/images/header-logo.svg" />
-            </div>
-          </a>
-          <div class="content-stretch flex gap-[32px] items-center relative shrink-0">
-            <div class="content-stretch flex gap-[32px] items-center opacity-70 relative shrink-0" data-name="Nav List">
-              <a class="content-stretch flex gap-[6px] items-center relative shrink-0" data-name="Link" href="./about.html">
-                <p
-                  class="font-[&#x27;Inter:Medium&#x27;,sans-serif] font-medium leading-[22px] not-italic relative shrink-0 text-[#2b2b2b] text-[14px] text-center whitespace-nowrap">
-                  About Program</p>
-              </a>
-              <div class="content-stretch flex gap-[2px] items-center relative shrink-0" data-name="Link">
-                <p
-                  class="font-[&#x27;Inter:Medium&#x27;,sans-serif] font-medium leading-[22px] not-italic relative shrink-0 text-[#2b2b2b] text-[14px] text-center whitespace-nowrap">
-                  Products</p>
-                <div class="relative shrink-0 size-[15px]" data-name="Line Rounded/Chevron down"><svg
-                    class="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15 15">
-                    <g id="Line Rounded/Chevron down">
-                      <path d="M11 5.5L7 9.5L3 5.5" id="Chevron down" stroke="var(--stroke-0, #2B2B2B)"
-                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.125"></path>
-                    </g>
-                  </svg></div>
-              </div>
-              <div class="content-stretch flex gap-[6px] items-center relative shrink-0" data-name="Link">
-                <p
-                  class="font-[&#x27;Inter:Medium&#x27;,sans-serif] font-medium leading-[22px] not-italic relative shrink-0 text-[#2b2b2b] text-[14px] text-center whitespace-nowrap">
-                  Loan Process</p>
-              </div>
-              <a class="content-stretch flex gap-[6px] items-center relative shrink-0" data-name="Link" href="./contact.html">
-                <p
-                  class="font-[&#x27;Inter:Medium&#x27;,sans-serif] font-medium leading-[22px] not-italic relative shrink-0 text-[#2b2b2b] text-[14px] text-center whitespace-nowrap">
-                  Contact Us</p>
-              </a>
-              <a class="content-stretch flex gap-[6px] items-center relative shrink-0" data-name="Link" href="./faq.html">
-                <p
-                  class="font-[&#x27;Inter:Medium&#x27;,sans-serif] font-medium leading-[22px] not-italic relative shrink-0 text-[#2b2b2b] text-[14px] text-center whitespace-nowrap">
-                  FAQs</p>
-              </a>
-            </div>
-            <div
-              class="bg-[#0971b8] content-stretch flex gap-[3px] items-center justify-center px-[18px] py-[16px] relative rounded-[100px] shadow-[0px_1px_4px_0px_rgba(25,33,61,0.08)] shrink-0"
-              data-name="Primary Button">
-              <p
-                class="font-[&#x27;Inter:Semi_Bold&#x27;,sans-serif] font-semibold leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white whitespace-nowrap">
-                Login</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white w-full mobile-navbar">
-        <div class="mobile-navbar-inner">
-          <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open navigation menu">
-            <img src="./assets/images/list-bar.svg" alt="" aria-hidden="true">
-          </button>
-          <div class="mobile-brand">
-            <a href="./index.html" aria-label="Home">
-              <img src="./assets/images/header-logo.svg" alt="SIDBI and Regional Rural Bank">
-            </a>
-          </div>
-          <button class="mobile-login-btn" type="button">Login</button>
-        </div>
-      </div>
-
-      <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
-      <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
-        <div class="mobile-drawer-header">
-          <p>Menu</p>
-          <button class="mobile-drawer-close" id="mobileDrawerClose" type="button"
-            aria-label="Close navigation menu">x</button>
-        </div>
-        <nav class="mobile-drawer-nav">
-          <a href="./about.html">About Program</a>
-          <a href="#">Products</a>
-          <a href="#">Loan Process</a>
-          <a href="./contact.html">Contact Us</a>
-          <a href="./faq.html">FAQs</a>
-        </nav>
-      </aside>
+      
 
       <div class="w-full">
         <div class="bg-[#c4e4ff] content-stretch flex items-end overflow-hidden w-full min-h-[538px] hero-split">
@@ -190,7 +89,7 @@
         </div>
 
         <div class="loan-products-grid">
-          <article class="loan-main-card">
+          <article class="loan-main-card" data-loan-link="./machine-loans.html" data-loan-title="Machinery Loan">
             <div class="loan-main-card-bg" aria-hidden="true"></div>
             <p class="loan-main-collapsed-label">Machinery <br />Loan</p>
             <div class="loan-main-card-content">
@@ -204,7 +103,9 @@
                     For buying equipment to grow or upgrade your business operations.
                   </p>
                 </div>
-                <img src="./assets/images/right-arrow.svg" alt="Arrow Up Right" class="size-[32px] shrink-0 mt-[8px]">
+                <a href="./machine-loans.html" class="loan-main-route size-[32px] shrink-0 mt-[8px]" aria-label="Go to Machinery Loan page">
+                  <img src="./assets/images/right-arrow.svg" alt="Arrow Up Right" class="size-[32px]">
+                </a>
               </div>
 
               <div class="mt-[40px]">
@@ -237,17 +138,17 @@
             </div>
           </article>
 
-          <article class="loan-side-card-new"
+          <article class="loan-side-card-new" data-loan-link="./business-loans.html" data-loan-title="Business Loan"
             style="background-image:linear-gradient(to bottom, rgba(16,28,66,0) 23.511%, #101c42 99.765%), url('./assets/images/business-loan.png');">
             <p>Business <br>Loan</p>
           </article>
 
-          <article class="loan-side-card-new"
+          <article class="loan-side-card-new" data-loan-link="./working-capital-term-loan.html" data-loan-title="Working Capital Loan"
             style="background-image:linear-gradient(to bottom, rgba(16,28,66,0) 23.511%, #101c42 99.765%), url('./assets/images/working-loan.png');">
             <p>Working Capital <br>Loan</p>
           </article>
 
-          <article class="loan-side-card-new"
+          <article class="loan-side-card-new" data-loan-link="./loan-against-property.html" data-loan-title="Loan Against Property"
             style="background-image:linear-gradient(to bottom, rgba(16,28,66,0) 23.511%, #101c42 99.765%), url('./assets/images/property-loan.png');">
             <p>Loan Against <br>Property</p>
           </article>
@@ -428,27 +329,17 @@
               <img src="./assets/images/leaf-node.svg" alt="Decorative background" class="docs-accordion-leaf">
             </div>
 
-            <div class="docs-accordion-rail" data-doc-key="other-docs" style="right:270px;">
+            <div class="docs-accordion-rail" data-doc-key="financial-docs" style="right:270px;">
               <div class="docs-accordion-divider"></div>
-              <div class="docs-accordion-rail-inner" style="gap:198px;">
-                <div class="size-[32px]"><img src="./assets/images/plus-icon.svg" alt="Expand Other Documents" class="docs-accordion-rail-icon w-full h-full object-cover"></div>
-                <div class="docs-accordion-rail-label-wrap" style="height:160px;">
-                  <p class="docs-accordion-rail-label">Other Documents</p>
+              <div class="docs-accordion-rail-inner" style="gap:170px;">
+                <div class="size-[32px]"><img src="./assets/images/plus-icon.svg" alt="Expand Financial Documents" class="docs-accordion-rail-icon w-full h-full object-cover"></div>
+                <div class="docs-accordion-rail-label-wrap" style="height:188px;">
+                  <p class="docs-accordion-rail-label">Financial Documents</p>
                 </div>
               </div>
             </div>
 
-            <div class="docs-accordion-rail" data-doc-key="e-nach" style="right:180px;">
-              <div class="docs-accordion-divider"></div>
-              <div class="docs-accordion-rail-inner" style="gap:205px;">
-                <div class="size-[32px]"><img src="./assets/images/plus-icon.svg" alt="Expand E-Nach Mandate" class="docs-accordion-rail-icon w-full h-full object-cover"></div>
-                <div class="docs-accordion-rail-label-wrap" style="height:153px;">
-                  <p class="docs-accordion-rail-label">E-Nach Mandate</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="docs-accordion-rail" data-doc-key="loan-docs" style="right:90px;">
+            <div class="docs-accordion-rail" data-doc-key="loan-docs" style="right:180px;">
               <div class="docs-accordion-divider"></div>
               <div class="docs-accordion-rail-inner" style="gap:170px;">
                 <div class="size-[32px]"><img src="./assets/images/plus-icon.svg" alt="Expand Loan Documentation" class="docs-accordion-rail-icon w-full h-full object-cover"></div>
@@ -458,12 +349,22 @@
               </div>
             </div>
 
-            <div class="docs-accordion-rail" data-doc-key="financial-docs" style="right:0px;">
+            <div class="docs-accordion-rail" data-doc-key="e-nach" style="right:90px;">
               <div class="docs-accordion-divider"></div>
-              <div class="docs-accordion-rail-inner" style="gap:170px;">
-                <div class="size-[32px]"><img src="./assets/images/plus-icon.svg" alt="Expand Financial Documents" class="docs-accordion-rail-icon w-full h-full object-cover"></div>
-                <div class="docs-accordion-rail-label-wrap" style="height:188px;">
-                  <p class="docs-accordion-rail-label">Financial Documents</p>
+              <div class="docs-accordion-rail-inner" style="gap:205px;">
+                <div class="size-[32px]"><img src="./assets/images/plus-icon.svg" alt="Expand E-Nach Mandate" class="docs-accordion-rail-icon w-full h-full object-cover"></div>
+                <div class="docs-accordion-rail-label-wrap" style="height:153px;">
+                  <p class="docs-accordion-rail-label">E-Nach Mandate</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="docs-accordion-rail" data-doc-key="other-docs" style="right:0px;">
+              <div class="docs-accordion-divider"></div>
+              <div class="docs-accordion-rail-inner" style="gap:198px;">
+                <div class="size-[32px]"><img src="./assets/images/plus-icon.svg" alt="Expand Other Documents" class="docs-accordion-rail-icon w-full h-full object-cover"></div>
+                <div class="docs-accordion-rail-label-wrap" style="height:160px;">
+                  <p class="docs-accordion-rail-label">Other Documents</p>
                 </div>
               </div>
             </div>
@@ -543,74 +444,12 @@
             </div>
           </div>
         </div>
-        <footer class=" mt-[100px] site-footer">
-          <div class="site-footer-inner">
-            <div class="site-footer-top">
-              <div class="site-footer-brand">
-                <img src="./assets/images/footer-logo.svg" alt="logo" class="site-footer-logo">
-                <p class="site-footer-description">
-                  An initiative by SIDBI and Regional Rural Banks to make MSME financing simpler, faster, and more
-                  transparent — so you can focus on growing your business.
-                </p>
-              </div>
-              <div class="site-footer-contact">
-                <div class="site-footer-contact-item">
-                  <img src="./assets/images/call.svg" alt="call" class="size-[24px]">
-                  <a href="callto:+91791234560" class="site-footer-contact-text">(079) 123-4560</a>
-                </div>
-                <div class="site-footer-contact-item">
-                  <img src="./assets/images/mail.svg" alt="email" class="size-[24px]">
-                  <a href="mailto:info@sidbirrb" class="site-footer-contact-text">info@sidbirrb</a>
-                </div>
-              </div>
-            </div>
+        <div id="site-footer"></div>
 
-            <div class="site-footer-divider" aria-hidden="true"></div>
-
-            <div class="site-footer-bottom">
-              <p class="site-footer-meta">© 2026 SIDBI. All rights reserved.</p>
-              <div class="site-footer-links">
-                <p>Terms &amp; Conditions</p>
-                <p>Disclaimer</p>
-                <p>Privacy Policy</p>
-                <p>Grievances</p>
-              </div>
-              <div class="site-footer-credit">
-                <div class="h-[18.827px] w-[14.252px]">
-                  <img src="./assets/images/sr.svg" alt="sr" class="w-full h-full object-cover">
-                </div>
-                <p class="site-footer-meta">Designed by ScreenRoot</p>
-              </div>
-            </div>
-          </div>
-        </footer>
+      
       </div>
     </div>
-    <script>
-      (function () {
-        var menuBtn = document.getElementById("mobileMenuBtn");
-        var closeBtn = document.getElementById("mobileDrawerClose");
-        var overlay = document.getElementById("mobileDrawerOverlay");
-        var drawer = document.getElementById("mobileDrawer");
-
-        if (!menuBtn || !closeBtn || !overlay || !drawer) return;
-
-        function openDrawer() {
-          document.body.classList.add("drawer-open");
-          drawer.setAttribute("aria-hidden", "false");
-        }
-
-        function closeDrawer() {
-          document.body.classList.remove("drawer-open");
-          drawer.setAttribute("aria-hidden", "true");
-        }
-
-        menuBtn.addEventListener("click", openDrawer);
-        closeBtn.addEventListener("click", closeDrawer);
-        overlay.addEventListener("click", closeDrawer);
-      })();
-    </script>
-    <script>
+<script>
       (function () {
         var grid = document.querySelector(".loan-products-grid");
         if (!grid) return;
@@ -662,7 +501,14 @@
           var titleNode = clone.querySelector(".loan-main-title");
           var hoveredTitleNode = card.querySelector("p");
           if (titleNode && hoveredTitleNode) {
-            titleNode.textContent = hoveredTitleNode.textContent.replace(/\s+/g, " ").trim();
+            titleNode.textContent = card.getAttribute("data-loan-title") || hoveredTitleNode.textContent.replace(/\s+/g, " ").trim();
+          }
+
+          var routeLink = clone.querySelector(".loan-main-route");
+          var targetUrl = card.getAttribute("data-loan-link");
+          if (routeLink && targetUrl) {
+            routeLink.setAttribute("href", targetUrl);
+            routeLink.setAttribute("aria-label", "Go to " + (card.getAttribute("data-loan-title") || "loan") + " page");
           }
 
           card.appendChild(clone);
@@ -721,6 +567,7 @@
             title: "Registration Details",
             gap: 170,
             height: 188,
+            leaf: "./assets/images/leaf-node.svg",
             row1: [
               "Mobile number linked to business bank account",
               "GST API access enabled (via www.gst.gov.in)",
@@ -735,6 +582,7 @@
             title: "Other Documents",
             gap: 198,
             height: 160,
+            leaf: "./assets/images/leaf-node.svg",
             row1: [
               "KYC documents of promoters/directors",
               "Address proof of business premises",
@@ -749,48 +597,53 @@
             title: "E-Nach Mandate",
             gap: 205,
             height: 153,
+            leaf: "./assets/images/e-nach-leaf.svg",
             row1: [
-              "Authorized signatory details",
-              "Bank account details for mandate",
-              "Linked mobile number and email"
+              "Internet banking credentials for business accounts (current/OD/working capital)",
+              "Debit card details",
+              ""
             ],
             row2: [
-              "Consent and mandate registration details",
-              "Verification through OTP-based flow"
+              "",
+              ""
             ]
           },
           "loan-docs": {
             title: "Loan Documentation",
             gap: 170,
             height: 188,
+            leaf: "./assets/images/loan-doc-leaf.svg",
             row1: [
-              "Signed loan application form",
-              "Sanction terms acceptance",
-              "Purpose-wise supporting documents"
+              "Aadhaar-linked mobile number of authorized signatory",
+              "Father/Spouse name of authorized signatory",
+              ""
             ],
             row2: [
-              "Security/collateral details (if required)",
-              "Undertakings and declarations"
+              "",
+              ""
             ]
           },
           "financial-docs": {
             title: "Financial Documents",
             gap: 170,
             height: 188,
+            leaf: "./assets/images/financial-leaf.svg",
             row1: [
-              "Recent GST returns",
-              "Bank statement for assessment period",
-              "Basic financial statements/details"
+              "Bank statement for 1 year (dedicated current banking)",
+              "Current account statement for the last 1 year",
+              "Unedited PDF only, no scans or modified files"
             ],
             row2: [
-              "Existing loan obligations details",
-              "Any additional financial clarification"
+              "JSON files of ITRs for the past 3 years",
+              ""
             ]
           }
         };
 
         function buildList(itemsList) {
-          return itemsList.map(function (item) {
+          return itemsList.filter(function (item) {
+            return item && item.trim() !== "";
+          }).map(function (item) {
             return '<li class="list-disc ms-[24px]"><span class="leading-[1.35]">' + item + "</span></li>";
           }).join("");
         }
@@ -811,7 +664,7 @@
             + '</div>'
             + '<ul class="block docs-accordion-spacer font-[&#x27;Inter:Regular&#x27;,sans-serif] font-normal text-[16px] text-white tracking-[0.16px]">' + buildList([data.row2[1]]) + '</ul>'
             + '</div>'
-            + '<img src="' + leafIcon + '" alt="Decorative background" class="docs-accordion-leaf">';
+            + '<img src="' + (data.leaf || leafIcon) + '" alt="Decorative background" class="docs-accordion-leaf">';
         }
 
         function renderCollapsedMarkup(data) {
@@ -830,7 +683,7 @@
             + '<img src="' + minusIcon + '" alt="Collapse ' + data.title + '" class="docs-accordion-mobile-icon">'
             + '</div>'
             + '<ul class="docs-accordion-mobile-list">' + buildList(data.row1) + buildList(data.row2) + '</ul>'
-            + '<img src="' + leafIcon + '" alt="Decorative background" class="docs-accordion-mobile-leaf">';
+            + '<img src="' + (data.leaf || leafIcon) + '" alt="Decorative background" class="docs-accordion-mobile-leaf">';
         }
 
         function renderCollapsedMarkupMobile(data) {
