@@ -7,8 +7,6 @@
   var SHARE_TITLE = "SIDBI — SWAVALAMBAN BHAVAN";
   var SHARE_TEXT =
     "SWAVALAMBAN BHAVAN, Plot No. C-11 G Block Bandra Kurla Complex, Bandra (East), Mumbai - 400051, Maharashtra";
-  var CONTACT_EMAIL = "help@sidbirrbcla.in";
-
   function showToast(el, message) {
     if (!el) return;
     el.textContent = message;
@@ -196,25 +194,14 @@
         return;
       }
 
-      var fullName = String(form.elements.namedItem("fullName").value || "").trim();
-      var phone = String(form.elements.namedItem("phone").value || "").trim();
-      var email = String(form.elements.namedItem("email").value || "").trim();
-      var subject = String(form.elements.namedItem("subject").value || "").trim();
-      var message = String(form.elements.namedItem("message").value || "").trim();
-
-      var subj = subject || "Contact form — SIDBI RRB";
-      var body =
-        "Name: " +
-        fullName +
-        "\nPhone: " +
-        phone +
-        "\nEmail: " +
-        (email || "—") +
-        "\n\n" +
-        (message || "—");
-
-      window.location.href =
-        "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
+      var data = {
+        fullName: String(form.elements.namedItem("fullName").value || "").trim(),
+        phone: String(form.elements.namedItem("phone").value || "").trim(),
+        email: String(form.elements.namedItem("email").value || "").trim(),
+        subject: String(form.elements.namedItem("subject").value || "").trim(),
+        message: String(form.elements.namedItem("message").value || "").trim()
+      };
+      console.log("Contact form submit", data);
     });
   }
 
