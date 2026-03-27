@@ -6443,12 +6443,6 @@ html {
     white-space: nowrap;
 }
 
-.site-footer-credit {
-    display: flex;
-    align-items: center;
-    gap: 9.018px;
-}
-
 .about-mission-section {
     width: 100%;
     margin-top: 100px;
