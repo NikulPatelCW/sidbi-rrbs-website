@@ -7,6 +7,7 @@
   <title>Contact Us | SIDBI & RRB Partnership</title>
   <link rel="stylesheet" href="./assets/index.css" />
   <script src="./assets/common-layout.js" defer></script>
+  <script src="./assets/contact.js" defer></script>
 </head>
 
 <body>
@@ -76,11 +77,11 @@
                 Bandra Kurla Complex, Bandra (East), Mumbai - 400051, Maharashtra
               </p>
               <div class="contact-map-actions">
-                <button type="button" aria-label="Previous location">
-                    <img src="./assets/images/mapPin.svg" alt="Previous location" class="size-[16px]">
+                <button type="button" id="contact-map-directions" aria-label="Open directions in Google Maps">
+                    <img src="./assets/images/mapPin.svg" alt="" class="size-[16px]" width="16" height="16">
                 </button>
-                <button type="button" aria-label="Next location">
-                    <img src="./assets/images/share.svg" alt="Next location" class="size-[16px]">
+                <button type="button" id="contact-map-share" aria-label="Share location">
+                    <img src="./assets/images/share.svg" alt="" class="size-[16px]" width="16" height="16">
                 </button>
               </div>
             </div>
@@ -88,13 +89,36 @@
 
           <div class="contact-form-panel">
             <h2 class="contact-form-title">Need help? <span>Drop us a message</span></h2>
-            <form class="contact-form-grid">
-              <input type="text" placeholder="Full Name*" />
-              <input type="tel" placeholder="Phone Number*" />
-              <input type="email" placeholder="Email" />
-              <input type="text" placeholder="Subject" />
-              <textarea rows="4" placeholder="Your Message"></textarea>
-              <button type="button" class="contact-submit-btn">Submit</button>
+            <form id="contact-form" class="contact-form-grid" novalidate>
+              <div class="contact-form-field">
+                <input type="text" name="fullName" id="contact-fullName" placeholder="Full Name*"
+                  autocomplete="name" aria-required="true" />
+                <span class="contact-field-error" role="alert" hidden></span>
+              </div>
+              <div class="contact-form-field">
+                <input type="tel" name="phone" id="contact-phone" placeholder="Phone Number* (digits only)"
+                  inputmode="numeric" autocomplete="tel-national" maxlength="15" aria-required="true"
+                  pattern="[0-9]*" />
+                <span class="contact-field-error" role="alert" hidden></span>
+              </div>
+              <div class="contact-form-field">
+                <input type="email" name="email" id="contact-email" placeholder="Email"
+                  autocomplete="email" />
+                <span class="contact-field-error" role="alert" hidden></span>
+              </div>
+              <div class="contact-form-field">
+                <input type="text" name="subject" id="contact-subject" placeholder="Subject"
+                  autocomplete="off" />
+                <span class="contact-field-error" role="alert" hidden></span>
+              </div>
+              <div class="contact-form-field contact-form-field--full">
+                <textarea name="message" id="contact-message" rows="4" placeholder="Your Message"
+                  autocomplete="off"></textarea>
+                <span class="contact-field-error" role="alert" hidden></span>
+              </div>
+              <div class="contact-form-actions">
+                <button type="submit" class="contact-submit-btn">Submit</button>
+              </div>
             </form>
           </div>
         </div>
@@ -102,7 +126,7 @@
 
       <div id="site-footer"></div>
 
-      
+      <div id="contact-toast" class="contact-toast" role="status" aria-live="polite" hidden></div>
     </div>
   </div>
 </body>
