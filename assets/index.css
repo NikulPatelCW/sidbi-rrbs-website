@@ -1625,6 +1625,10 @@ body {
         min-height: 538px
     }
 
+    .min-h-\[480px\] {
+        min-height: 480px
+    }
+
     .min-h-px {
         min-height: 1px
     }
@@ -3059,6 +3063,14 @@ body {
 
     .pl-8 {
         padding-left: calc(var(--spacing)*8)
+    }
+
+    .pl-\[80px\] {
+        padding-left: 80px;
+    }
+
+    .pr-\[36px\] {
+        padding-right: 36px;
     }
 
     .text-center {
@@ -6933,6 +6945,10 @@ html {
     .hero-media {
         height: 360px;
     }
+
+    .hero-split--bg-right {
+        background-position: left center !important;
+    }
 }
 
 /* Loan process: digital journey section */
@@ -7262,6 +7278,80 @@ html {
     transform: translateY(0);
 }
 
+/* Business loans: Figma 3×2 “Why choose” feature grid */
+.business-why-figma-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.business-why-figma-card {
+    align-items: flex-end;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 18px;
+    display: flex;
+    min-height: 400px;
+    overflow: hidden;
+    padding: 22px 20px;
+    position: relative;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.business-why-figma-card-copy {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.business-why-figma-card-title {
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 8px;
+}
+
+.business-why-figma-card-text {
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.35;
+    margin: 0;
+    opacity: 0.95;
+}
+
+.business-why-figma-card-text strong {
+    font-weight: 700;
+}
+
+/* Machine loans: first row 3 cards, second row 2 cards centered */
+.machine-why-figma-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.machine-why-figma-row {
+    display: grid;
+    gap: 24px;
+}
+
+.machine-why-figma-row--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.machine-why-figma-row--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-inline: auto;
+    max-width: calc((100% - 48px) * 2 / 3 + 24px);
+    width: 100%;
+}
+
 @media (max-width: 1200px) {
     .business-design-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -7271,6 +7361,22 @@ html {
         min-height: 280px;
     }
 
+    .business-why-figma-grid {
+        gap: 20px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .business-why-figma-card {
+        min-height: 340px;
+    }
+
+    .machine-why-figma-row--3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .machine-why-figma-row--2 {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -7291,8 +7397,40 @@ html {
     .business-design-card-title {
         font-size: 14px;
     }
-    .business-design-card-subcopy{
+
+    .business-design-card-subcopy {
         font-size: 12px;
+    }
+
+    .business-why-figma-grid {
+        gap: 14px;
+        grid-template-columns: 1fr;
+    }
+
+    .business-why-figma-card {
+        min-height: 300px;
+        padding: 18px 16px;
+    }
+
+    .business-why-figma-card-title {
+        font-size: 20px;
+    }
+
+    .business-why-figma-card-text {
+        font-size: 16px;
+    }
+
+    .machine-why-figma-grid {
+        gap: 16px;
+    }
+
+    .machine-why-figma-row {
+        gap: 16px;
+    }
+
+    .machine-why-figma-row--3,
+    .machine-why-figma-row--2 {
+        grid-template-columns: 1fr;
     }
 }
 

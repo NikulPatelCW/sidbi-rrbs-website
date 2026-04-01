@@ -15,33 +15,37 @@
       <div id="site-header"></div>
 
       <div class="w-full">
-        <div class="bg-[#c4e4ff] content-stretch flex items-end overflow-hidden w-full min-h-[538px] hero-split">
-          <div class="content-stretch flex flex-col gap-[40px] items-start px-[80px] py-[40px] min-w-0 w-1/2 hero-copy">
+        <div
+          class="relative content-stretch flex items-end overflow-hidden w-full min-h-[480px] hero-split hero-split--bg-right"
+          style="background-image: url('./assets/images/new-loans/business-bg.png'); background-size: cover; background-position: right; background-repeat: no-repeat;">
+          <div
+            class="absolute inset-0 pointer-events-none"
+            style="background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.12), transparent);"
+            aria-hidden="true"></div>
+          <div
+            class="relative z-[1] content-stretch flex flex-col gap-[40px] items-start pl-[80px] py-[40px] min-w-0 w-1/2 hero-copy">
             <div class="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
               <div class="content-stretch flex items-center gap-[8px]">
                 <a href="./index.html"
-                  class="font-['Inter:Medium',sans-serif] font-medium leading-[20px] text-[#707070] text-[14px] whitespace-nowrap">Home</a>
+                  class="font-['Inter:Medium',sans-serif] font-medium leading-[20px] text-white text-[14px] whitespace-nowrap opacity-80 hover:opacity-100 transition-opacity">Home</a>
                 <p
-                  class="font-['Inter:Medium',sans-serif] font-medium leading-[20px] text-[#707070] text-[14px] whitespace-nowrap">
+                  class="font-['Inter:Medium',sans-serif] font-medium leading-[20px] text-white text-[14px] whitespace-nowrap opacity-60">
                   &gt;
                 </p>
                 <p
-                  class="font-['Inter:Medium',sans-serif] font-medium leading-[20px] text-[#2b2b2b] text-[14px] whitespace-nowrap">
+                  class="font-['Inter:Medium',sans-serif] font-medium leading-[20px] text-white text-[14px] whitespace-nowrap">
                   Business Loans
                 </p>
               </div>
 
               <div class="content-stretch flex flex-col gap-[28px] items-start not-italic relative shrink-0 w-full">
                 <p
-                  class="hero-title font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] relative shrink-0 text-[#00569b] text-[58px] tracking-[-1.16px] w-full">
+                  class="hero-title font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] relative shrink-0 text-white text-[48px] w-full">
                   Flexible financing for your business needs
                 </p>
                 <p
-                  class="hero-subtitle font-['Inter:Regular',sans-serif] font-normal leading-[1.3] min-w-full relative shrink-0 text-[#555] text-[20px] w-[min-content]">
-                  Access structured business finance designed to help MSMEs invest in assets and meet critical
-                  operational requirements. Offered through the partnership between Small Industries Development Bank of
-                  India and Regional Rural Banks, this loan supports businesses with quick and efficient access to
-                  funds.
+                  class="hero-subtitle font-['Inter:Regular',sans-serif] opacity-80 font-normal leading-[1.3] min-w-full relative shrink-0 text-white text-[20px] w-[min-content]">
+                  A structured business finance designed to help MSMEs to invest in assets and manage business needs.
                 </p>
               </div>
             </div>
@@ -56,14 +60,6 @@
                   Apply Now
                 </span>
               </a>
-            </div>
-          </div>
-
-          <div class="relative min-w-0 w-1/2 hero-media">
-            <div class="absolute inset-0 overflow-hidden pointer-events-none">
-              <img alt="Business loans hero"
-                class="absolute inset-0 h-full w-full object-cover object-center hero-image"
-                src="./assets/images/loans/business-loan-bg.png" />
             </div>
           </div>
         </div>
@@ -93,136 +89,52 @@
             </p>
           </div>
 
-          <div class="business-design-grid">
-            <article class="business-design-card"
-              style="background-image:linear-gradient(180deg, rgba(0, 17, 52, 0) 42.54%, #07173f 100%), url('./assets/images/loans/design-tab-1.png');">
-              <div class="business-design-card-copy">
-                <p class="business-design-card-title">Loan Range</p>
-                <p class="business-design-card-subcopy">10 lakh to 50 lakh tailored for MSME needs.</p>
+          <div class="business-why-figma-grid">
+            <article class="business-why-figma-card"
+              style="background-image: linear-gradient(180deg, rgba(0, 17, 52, 0) 32%, rgba(7, 23, 63, 0.55) 72%, #07173f 100%), url('./assets/images/new-loans/Loan%20Range.png');">
+              <div class="business-why-figma-card-copy">
+                <p class="business-why-figma-card-title">Loan Range</p>
+                <p class="business-why-figma-card-text">₹10 lakh to ₹50 lakh tailored for MSME needs</p>
               </div>
             </article>
 
-            <article class="business-design-card"
-              style="background-image:linear-gradient(180deg, rgba(0, 17, 52, 0) 42.54%, #07173f 100%), url('./assets/images/loans/design-tab-2.png');">
-              <div class="business-design-card-copy">
-                <p class="business-design-card-title">Comprehensive Financing</p>
-                <p class="business-design-card-subcopy">Up to 100% of eligible project costs.</p>
+            <article class="business-why-figma-card"
+              style="background-image: linear-gradient(180deg, rgba(0, 17, 52, 0) 32%, rgba(7, 23, 63, 0.55) 72%, #07173f 100%), url('./assets/images/new-loans/Tangible%20Light%20Assets.png');">
+              <div class="business-why-figma-card-copy">
+                <p class="business-why-figma-card-title">Tangible Light Assets</p>
+                <p class="business-why-figma-card-text">Up to 20% for machinery, furnishings, commercial vehicles and other needs.</p>
               </div>
             </article>
 
-            <article class="business-design-card"
-              style="background-image:linear-gradient(180deg, rgba(0, 17, 52, 0) 42.54%, #07173f 100%), url('./assets/images/loans/design-tab-3.png');">
-              <div class="business-design-card-copy">
-                <p class="business-design-card-title">Digital Loan Journey</p>
-                <p class="business-design-card-subcopy">Seamless process from application to disbursement.</p>
+            <article class="business-why-figma-card"
+              style="background-image: linear-gradient(180deg, rgba(0, 17, 52, 0) 32%, rgba(7, 23, 63, 0.55) 72%, #07173f 100%), url('./assets/images/new-loans/Intangible%20Business%20Needs.png');">
+              <div class="business-why-figma-card-copy">
+                <p class="business-why-figma-card-title">Intangible Business Needs</p>
+                <p class="business-why-figma-card-text">Up to 20% for marketing, R&amp;D, raw materials, and other business needs.</p>
               </div>
             </article>
 
-            <article class="business-design-card"
-              style="background-image:linear-gradient(180deg, rgba(0, 17, 52, 0) 42.54%, #07173f 100%), url('./assets/images/loans/design-tab-4.png');">
-              <div class="business-design-card-copy">
-                <p class="business-design-card-title">Quick Processing</p>
-                <p class="business-design-card-subcopy">Faster sanction and disbursement timelines.</p>
+            <article class="business-why-figma-card"
+              style="background-image: linear-gradient(180deg, rgba(0, 17, 52, 0) 32%, rgba(7, 23, 63, 0.55) 72%, #07173f 100%), url('./assets/images/new-loans/Easy%20Repayment%20Scheme.png');">
+              <div class="business-why-figma-card-copy">
+                <p class="business-why-figma-card-title">Easy Repayment Scheme</p>
+                <p class="business-why-figma-card-text">Attractive interest rates with repayment tenure up to 5 years</p>
               </div>
             </article>
 
-            <article class="business-design-card"
-              style="background-image:linear-gradient(180deg, rgba(0, 17, 52, 0) 42.54%, #07173f 100%), url('./assets/images/loans/design-tab-5.png');">
-              <div class="business-design-card-copy">
-                <p class="business-design-card-title">Easy repayment scheme</p>
-                <p class="business-design-card-subcopy">Repayment tenure up to 5 years.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="business-financing-section w-full">
-        <div class="business-financing-shell">
-          <div class="business-financing-heading">
-            <h2
-              class="font-['Inter:Semi_Bold',sans-serif]  leading-[1.2] text-[#333] text-[48px] tracking-[-0.96px] max-w-[1066px] text-center">
-              <span class=" font-semibold"> Financing</span> your <span class=" font-semibold">business needs</span>
-            </h2>
-            <p
-              class="font-['Inter:Medium',sans-serif] font-medium leading-[1.4] text-[#707070] text-[20px] max-w-[1066px] text-center">
-              The loan can be used for various legitimate business purposes, helping MSMEs strengthen and expand their
-              operations.
-            </p>
-          </div>
-
-          <div class="business-financing-grid">
-            <article class="business-financing-card business-financing-card--green">
-              <img src="./assets/images/loans/handCoins.svg" alt="Tangible light assets icon"
-                class="business-financing-icon" />
-              <p class="business-financing-card-title">Tangible Light Assets</p>
-              <p class="business-financing-card-subcopy">
-                Fund essential physical assets (up to 20 lakhs) like machinery, furnishings, renovations, new outlets,
-                and commercial vehicles.
-              </p>
-            </article>
-
-            <article class="business-financing-card business-financing-card--blue">
-              <img src="./assets/images/loans/buildingOffice.svg" alt="Intangible business needs icon"
-                class="business-financing-icon" />
-              <p class="business-financing-card-title">Intangible Business Needs</p>
-              <p class="business-financing-card-subcopy">
-                Cover non-physical expenses (up to 20% of the loan amount), including raw materials, marketing, R&amp;D,
-                certifications, and fees.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="eligibility-section w-full">
-        <div class="eligibility-shell">
-          <div class="eligibility-heading">
-            <h2
-              class="font-['Inter:Regular',sans-serif] font-normal leading-[1.2] text-[#333] text-[48px] tracking-[-0.96px] max-w-[1066px] text-center">
-              Our <span class="font-['Inter:Semi_Bold',sans-serif] font-semibold">eligibility criteria</span>
-            </h2>
-            <p
-              class="font-['Inter:Medium',sans-serif] font-medium leading-[1.4] text-[#707070] text-[20px] text-center">
-              This loan is available for formal MSMEs across key sectors.
-            </p>
-          </div>
-
-          <div class="eligibility-grid">
-            <article class="eligibility-card">
-              <div class="eligibility-card-media"
-                style="background-image:url('./assets/images/loans/eligibility-1.png');"></div>
-              <div class="eligibility-card-bottom eligibility-card-bottom--blue">
-                <p class="eligibility-bottom-title">Mandatory Requirements</p>
-                <p class="eligibility-bottom-desc">Businesses must have the following registrations</p>
-                <div class="eligibility-list">
-                  <ul>
-                    <li>Udyam Registration</li>
-                    <li>Income Tax Return filing</li>
-                  </ul>
-                  <ul>
-                    <li>GST Registration</li>
-                  </ul>
-                </div>
+            <article class="business-why-figma-card"
+              style="background-image: linear-gradient(180deg, rgba(0, 17, 52, 0) 32%, rgba(7, 23, 63, 0.55) 72%, #07173f 100%), url('./assets/images/new-loans/Comprehensive%20Financing.png');">
+              <div class="business-why-figma-card-copy">
+                <p class="business-why-figma-card-title">Comprehensive Financing</p>
+                <p class="business-why-figma-card-text">Up to 100% of eligible cost for financing the project</p>
               </div>
             </article>
 
-            <article class="eligibility-card">
-              <div class="eligibility-card-media"
-                style="background-image:url('./assets/images/loans/eligibility-2.png');"></div>
-              <div class="eligibility-card-bottom eligibility-card-bottom--blue">
-                <p class="eligibility-bottom-title">Eligible business segments</p>
-                <p class="eligibility-bottom-desc">These are the business segments who are eligible for this loan</p>
-                <div class="eligibility-list">
-                  <ul>
-                    <li>Manufacturing units</li>
-                    <li>Working Professionals</li>
-                  </ul>
-                  <ul>
-                    <li>Service businesses</li>
-                    <li>Retail traders</li>
-                  </ul>
-                </div>
+            <article class="business-why-figma-card"
+              style="background-image: linear-gradient(180deg, rgba(0, 17, 52, 0) 32%, rgba(7, 23, 63, 0.55) 72%, #07173f 100%), url('./assets/images/new-loans/Wide%20Business%20Eligibility.png');">
+              <div class="business-why-figma-card-copy">
+                <p class="business-why-figma-card-title">Wide Business Eligibility</p>
+                <p class="business-why-figma-card-text">Available for manufacturing units, service businesses, working professionals, and retail traders.</p>
               </div>
             </article>
           </div>
