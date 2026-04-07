@@ -90,7 +90,8 @@
 
         <div class="loan-products-grid">
           <article class="loan-main-card" data-loan-link="./machine-loans.html" data-loan-title="Machinery Loan"
-            data-loan-subtitle="Quick finance for purchasing machinery">
+            data-loan-subtitle="Quick finance for purchasing machinery"
+            data-loan-avail="Avail loan from ₹20L to ₹100L">
             <div class="loan-main-card-bg" aria-hidden="true"></div>
             <p class="loan-main-collapsed-label">Machinery <br />Loan</p>
             <div class="loan-main-card-content">
@@ -141,6 +142,7 @@
 
           <article class="loan-side-card-new" data-loan-link="./business-loans.html" data-loan-title="Business Loan"
             data-loan-subtitle="Quick business finance for purchasing light assets"
+            data-loan-avail="Avail loan from ₹10L to ₹50L"
             style="background-image:linear-gradient(to bottom, rgba(16,28,66,0) 23.511%, #101c42 99.765%), url('./assets/images/business-loan.png');">
             <p>Business <br>Loan</p>
           </article>
@@ -148,12 +150,14 @@
           <article class="loan-side-card-new" data-loan-link="./working-capital-term-loan.html"
             data-loan-title="Working Capital Term Loan"
             data-loan-subtitle="Quick working capital finance to MSMEs"
+            data-loan-avail="Avail loan from ₹10L to ₹100L"
             style="background-image:linear-gradient(to bottom, rgba(16,28,66,0) 23.511%, #101c42 99.765%), url('./assets/images/working-loan.png');">
             <p>Working Capital Term <br>Loan</p>
           </article>
 
           <article class="loan-side-card-new" data-loan-link="./loan-against-property.html" data-loan-title="Loan Against Property"
             data-loan-subtitle="General purpose loan against immovable property"
+            data-loan-avail="Avail loan from ₹20L to ₹200L"
             style="background-image:linear-gradient(to bottom, rgba(16,28,66,0) 23.511%, #101c42 99.765%), url('./assets/images/property-loan.png');">
             <p>Loan Against <br>Property</p>
           </article>
@@ -515,6 +519,12 @@
           var sub = card.getAttribute("data-loan-subtitle");
           if (subtitleNode && sub) {
             subtitleNode.textContent = sub;
+          }
+
+          var avail = card.getAttribute("data-loan-avail");
+          var availNode = clone.querySelector(".loan-highlight-item p");
+          if (availNode && avail) {
+            availNode.textContent = avail;
           }
 
           var routeLink = clone.querySelector(".loan-main-route");
