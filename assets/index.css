@@ -2028,6 +2028,9 @@ body {
     .max-w-\[1440px\] {
         max-width: 1440px
     }
+    .max-w-\[1066px\] {
+        max-width: 1066px
+    }
 
     .max-w-\[559px\] {
         max-width: 559px
