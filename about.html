@@ -351,16 +351,40 @@
                         </article>
 
                         <article class="loan-side-card-new"
+                            data-highlight-1="Hospitality"
+                            data-highlight-2="Healthcare"
+                            data-highlight-3="IT &amp; Business Services"
+                            data-highlight-4="Education &amp; Training"
+                            data-icon-1="./assets/images/about/wellbeing-hospitality.svg"
+                            data-icon-2="./assets/images/about/wellbeing-healthcare.svg"
+                            data-icon-3="./assets/images/about/wellbeing-it.svg"
+                            data-icon-4="./assets/images/about/wellbeing-education.svg"
                             style="background-image:linear-gradient(to bottom, rgba(16,28,66,0) 23.511%, #101c42 99.765%), url('./assets/images/about/well-bg.png');">
                             <p>Wellbeing <br>Services</p>
                         </article>
 
                         <article class="loan-side-card-new"
+                            data-highlight-1="Agri &amp; food stores"
+                            data-highlight-2="Department stores"
+                            data-highlight-3="Medical stores"
+                            data-highlight-4="Branded apparel/appliances stores"
+                            data-icon-1="./assets/images/about/retail-agri.svg"
+                            data-icon-2="./assets/images/about/retail-department.svg"
+                            data-icon-3="./assets/images/about/retail-medical.svg"
+                            data-icon-4="./assets/images/about/retail-branded.svg"
                             style="background-image:linear-gradient(to bottom, rgba(16,28,66,0) 23.511%, #101c42 99.765%), url('./assets/images/about/retail-bg.png');">
                             <p>Retail &amp; Trade</p>
                         </article>
 
                         <article class="loan-side-card-new"
+                            data-highlight-1="Doctor"
+                            data-highlight-2="Architect"
+                            data-highlight-3="Chartered Accountant"
+                            data-highlight-4="Lawyer"
+                            data-icon-1="./assets/images/about/pro-doctor.svg"
+                            data-icon-2="./assets/images/about/pro-architect.svg"
+                            data-icon-3="./assets/images/about/pro-accountant.svg"
+                            data-icon-4="./assets/images/about/pro-lawyer.svg"
                             style="background-image:linear-gradient(to bottom, rgba(16,28,66,0) 23.511%, #101c42 99.765%), url('./assets/images/about/work-bg.png');">
                             <p>Working <br>Professionals</p>
                         </article>
@@ -464,6 +488,20 @@
                 var hoveredTitleNode = card.querySelector("p");
                 if (titleNode && hoveredTitleNode) {
                     titleNode.textContent = hoveredTitleNode.textContent.replace(/\s+/g, " ").trim();
+                }
+
+                var highlightItems = clone.querySelectorAll(".loan-highlight-item");
+                for (var hi = 0; hi < highlightItems.length; hi++) {
+                    var n = hi + 1;
+                    var text = card.getAttribute("data-highlight-" + n);
+                    var p = highlightItems[hi].querySelector("p");
+                    if (p && text) p.textContent = text;
+                    var iconSrc = card.getAttribute("data-icon-" + n);
+                    var img = highlightItems[hi].querySelector("img");
+                    if (img && iconSrc) {
+                        img.src = iconSrc;
+                        if (text) img.alt = text;
+                    }
                 }
 
                 card.appendChild(clone);
