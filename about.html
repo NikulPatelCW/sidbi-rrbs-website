@@ -453,8 +453,6 @@
 
             if (!mainCard || !mainContent || !sideCards.length) return;
 
-            grid.classList.add("active-1");
-
             function clearSideStates() {
                 sideCards.forEach(function (card) {
                     card.classList.remove("side-expanded");
@@ -465,14 +463,8 @@
                 });
             }
 
-            function setActive(idx) {
-                grid.classList.remove("active-1", "active-2", "active-3", "active-4");
-                grid.classList.add("active-" + idx);
-            }
-
-            function expandSide(card, sideIndex) {
+            function expandSide(card) {
                 clearSideStates();
-                setActive(sideIndex + 2);
 
                 mainCard.classList.add("collapsed");
                 card.classList.add("side-expanded");
@@ -509,17 +501,16 @@
 
             function resetAll() {
                 clearSideStates();
-                setActive(1);
                 mainCard.classList.remove("collapsed");
             }
 
-            sideCards.forEach(function (card, idx) {
+            sideCards.forEach(function (card) {
                 card.setAttribute("tabindex", "0");
                 card.addEventListener("mouseenter", function () {
-                    expandSide(card, idx);
+                    expandSide(card);
                 });
                 card.addEventListener("focus", function () {
-                    expandSide(card, idx);
+                    expandSide(card);
                 });
             });
 

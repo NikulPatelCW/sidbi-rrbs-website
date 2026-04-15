@@ -1628,6 +1628,9 @@ body {
     .min-h-\[480px\] {
         min-height: 480px
     }
+    .min-h-\[548px\] {
+        min-height: 548px
+    }
 
     .min-h-px {
         min-height: 1px
@@ -1671,6 +1674,14 @@ body {
 
     .w-1\/2 {
         width: 50%;
+    }
+    
+    .w-51\/100 {
+        width: 51%
+    }
+
+    .w-6\/10 {
+        width: 60%
     }
 
     .w-4 {
@@ -3091,29 +3102,32 @@ body {
     .align-middle {
         vertical-align: middle
     }
+    .font-\[\'Inter\'\] {
+        font-family: Inter, sans-serif
+    }
 
     .font-\[\'Inter\:Bold\'\,sans-serif\] {
-        font-family: Inter\:Bold, sans-serif
+        font-family: Inter, sans-serif
     }
 
     .font-\[\'Inter\:Light\'\,sans-serif\] {
-        font-family: Inter\:Light, sans-serif
+        font-family: Inter, sans-serif
     }
 
     .font-\[\'Inter\:Medium\'\,sans-serif\] {
-        font-family: Inter\:Medium, sans-serif
+        font-family: Inter, sans-serif
     }
 
     .font-\[\'Inter\:Medium_Italic\'\,sans-serif\] {
-        font-family: Inter\:Medium Italic, sans-serif
+        font-family: Inter, sans-serif
     }
 
     .font-\[\'Inter\:Regular\'\,sans-serif\] {
-        font-family: Inter\:Regular, sans-serif
+        font-family: Inter, sans-serif
     }
 
     .font-\[\'Inter\:Semi_Bold\'\,sans-serif\] {
-        font-family: Inter\:Semi Bold, sans-serif
+        font-family: Inter, sans-serif
     }
 
     .font-mono {
@@ -3326,6 +3340,12 @@ body {
 
     .text-\[\#00569b\] {
         color: #00569b
+    }
+    .text-\[\#37AEFF\] {
+        color: #37AEFF
+    }
+    .text-\[\#7DEE7E\] {
+        color: #7DEE7E
     }
 
     .text-\[\#0971b8\] {
@@ -5945,17 +5965,104 @@ html {
 
 /* Hero responsive behavior for static build where utility variants may be missing */
 
-/* RRB partners responsive row */
-.rrb-partners-row {
+/* RRB partners: infinite horizontal marquee (duplicated groups in HTML) */
+.rrb-partners-marquee {
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.rrb-partners-marquee-track {
     display: flex;
-    flex-direction: column;
+    width: max-content;
+    animation: rrb-partners-marquee 15s linear infinite;
+    will-change: transform;
+}
+
+.rrb-partners-marquee:hover .rrb-partners-marquee-track {
+    animation-play-state: paused;
+}
+
+.rrb-partners-marquee-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
     gap: 16px;
+    flex: none;
+    padding-right: 16px;
 }
 
 @media (min-width: 768px) {
-    .rrb-partners-row {
-        flex-direction: row;
+    .rrb-partners-marquee-group {
         gap: 24px;
+        padding-right: 24px;
+    }
+}
+
+.rrb-partners-marquee .rrb-partner-card {
+    flex: none;
+    box-sizing: border-box;
+    width: clamp(220px, 70vw, 360px);
+    min-width: clamp(220px, 70vw, 360px);
+}
+
+@media (min-width: 768px) {
+    .rrb-partners-marquee .rrb-partner-card {
+        width: clamp(240px, 28vw, 360px);
+        min-width: clamp(240px, 28vw, 360px);
+    }
+}
+
+@keyframes rrb-partners-marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rrb-partners-marquee-track {
+        animation: none;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .rrb-partners-marquee-group[aria-hidden="true"] {
+        display: none;
+    }
+
+    .rrb-partners-marquee-group {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-right: 0;
+        width: 100%;
+        max-width: 1200px;
+        gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+        .rrb-partners-marquee-group {
+            gap: 24px;
+        }
+    }
+
+    .rrb-partners-marquee .rrb-partner-card {
+        width: min(100%, 360px);
+        min-width: 0;
+        flex: 1 1 240px;
+    }
+
+    .rrb-partners-marquee {
+        -webkit-mask-image: none;
+        mask-image: none;
     }
 }
 
@@ -6017,255 +6124,321 @@ html {
     opacity: .7;
 }
 
-/* Documents accordion */
-.docs-accordion-shell {
-    background-image: linear-gradient(90deg, rgb(0, 103, 185) 0%, rgb(0, 103, 185) 100%), linear-gradient(90deg, rgb(35, 41, 122) 0%, rgb(35, 41, 122) 100%);
+/* Homepage "What makes this initiative different": copy on top, large icon bottom-right */
+.initiative-grid--home-features .initiative-card {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    justify-content: flex-start;
+    min-height: 200px;
+    overflow: hidden;
+    padding: 24px;
+    position: relative;
+}
+
+.initiative-grid--home-features .initiative-copy {
+    flex: 0 0 auto;
+    max-width: 72%;
+    position: relative;
+    z-index: 2;
+}
+
+.initiative-grid--home-features .initiative-title {
+    font-size: 18px;
+}
+
+.initiative-grid--home-features .initiative-subtitle {
+    line-height: 1.35;
+    margin-top: 2px;
+}
+
+.initiative-grid--home-features .initiative-icon-wrap {
+    align-items: flex-end;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    /* bottom: -6px;
+    height: 136px;
+    right: -6px;
+    width: 136px; */
+    z-index: 1;
+    bottom: 0px;
+    /* height: 140px; */
+    right: 20px;
+    /* width: 140px; */
+}
+
+/* @media (min-width: 768px) {
+    .initiative-grid--home-features .initiative-icon-wrap {
+        bottom: -8px;
+        height: 160px;
+        right: -8px;
+        width: 160px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .initiative-grid--home-features .initiative-icon-wrap {
+        bottom: -10px;
+        height: 180px;
+        right: -10px;
+        width: 180px;
+    }
+} */
+
+.initiative-grid--home-features .initiative-icon {
+    display: block;
+    flex: none;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: 100% 100%;
+    shape-rendering: geometricPrecision;
+    width: 100%;
+}
+
+/* Documents — vertical tabs */
+.docs-tabs-shell {
+    border: 1px solid #0971b8;
     border-radius: 40px;
-    height: 464px;
+    display: flex;
+    min-height: 464px;
     overflow: hidden;
     position: relative;
     width: 100%;
+    background: #fff;
 }
 
-.docs-accordion-panel {
-    background: #0067b9;
-    cursor: pointer;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    transition: all .5s ease-in-out;
-}
-
-.docs-accordion-panel--active {
-    left: 0;
-    width: calc(100% - 360px);
-    z-index: 10;
-    /* ensure open card respects shell's left radius when it's the first item */
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
-}
-
-.docs-accordion-active-icon-wrap {
-    align-items: center;
+.docs-tabs-nav {
+    flex: 0 0 28%;
+    max-width: 360px;
+    min-width: 220px;
     display: flex;
     flex-direction: column;
-    gap: 170px;
-    justify-content: center;
-    left: 26px;
-    position: absolute;
-    top: 38px;
-    width: 32px;
+    background: #fff;
+    /* border-right: 1px solid #e4e4e4; */
 }
 
-.docs-accordion-content {
-    left: 90px;
-    position: absolute;
-    top: 38px;
-    right: 24px;
-    /* allow fluid width so text doesn't get clipped */
-    width: auto;
-    max-width: none;
+.docs-tabs-nav-item {
+    align-items: center;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #e8e8e8;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    flex: 1 0 auto;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    gap: 12px;
+    justify-content: space-between;
+    line-height: 130%;
+    min-height: 56px;
+    padding: 14px 18px;
+    padding-left:36px;
+    text-align: left;
+    transition: background .2s ease, color .2s ease, font-weight .15s ease;
+}
+
+.docs-tabs-nav-item:hover:not(.docs-tabs-nav-item--active) {
+    background: #f5f9fc;
+}
+
+.docs-tabs-nav-item--active {
+    background: #0971b8;
+    color: #fff;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+}
+
+.docs-tabs-nav-label {
+    flex: 1 1 auto;
+}
+
+.docs-tabs-nav-arrow {
+    flex: none;
+    font-size: 18px;
+    line-height: 1;
+    color: #0971b8;
+    font-weight: 600;
+}
+
+.docs-tabs-nav-item--active .docs-tabs-nav-arrow {
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    .docs-tabs-nav-item:last-of-type {
+        border-bottom: none;
+    }
+}
+
+.docs-tabs-panel-desktop {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+    min-width: 0;
+}
+
+.docs-tabs-panel {
+    background: #F0F8FF;
+    flex: 1 1 auto;
+    min-height: 320px;
+    min-width: 0;
+    overflow: hidden;
+    padding: 32px 36px 140px 32px;
+    position: relative;
+}
+
+.docs-tabs-panel-title {
+    color: #333;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.4px;
+    line-height: 130%;
+    margin: 0 0 20px;
+}
+
+.docs-tabs-panel-body {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity .25s ease, transform .25s ease;
-}
-
-.docs-accordion-list-row {
-    display: flex;
-    gap: 44px;
-    width: 100%;
-}
-
-.docs-accordion-list-row--compact {
-    align-items: center;
-    white-space: nowrap;
-}
-
-.docs-col-w-277 {
-    width: 277px;
-}
-
-.docs-col-w-242 {
-    width: 242px;
-}
-
-.docs-col-w-302 {
-    width: 302.268px;
-}
-
-.docs-accordion-spacer {
-    opacity: 0;
-    width: 279.428px;
-}
-
-.docs-accordion-leaf {
-    bottom: 0;
-    position: absolute;
-}
-
-.docs-accordion-rail {
-    background: #0067b9;
-    cursor: pointer;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    transition: all .5s ease-in-out;
-    width: 90px;
+    gap: 16px;
+    position: relative;
     z-index: 1;
 }
 
-.docs-accordion-rail.is-selected {
-    background: #005fa8;
+.docs-tabs-list-row {
+    align-items: start;
+    column-gap: 32px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 16px;
+    width: 100%;
 }
 
-.docs-accordion-content.is-fading {
-    opacity: .3;
-    transform: translateY(6px);
-}
-
-.docs-accordion-divider {
-    background: rgba(255, 255, 255, .5);
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 1px;
-}
-
-.docs-accordion-rail-inner {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    left: 26px;
-    position: absolute;
-    top: 38px;
-    width: 32px;
-}
-
-.docs-accordion-rail-label-wrap {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    min-width: 100%;
-}
-
-.docs-accordion-rail-label {
-    color: #fff;
-    font-family: Inter;
-    font-size: 20px;
+.docs-tabs-col {
+    color: #333;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 300;
-    height: 32px;
-    line-height: 1.3;
-    letter-spacing: -0.4px;
-    transform: rotate(-90deg);
-    white-space: nowrap;
+    font-weight: 400;
+    letter-spacing: 0.16px;
+    line-height: 135%;
+    list-style: none;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
 }
 
-/* Make desktop panel content resilient on narrower widths */
-@media (max-width: 1200px) {
-    .docs-accordion-list-row {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
+.docs-tabs-col li {
+    margin: 0;
+    padding-left: 14px;
+    position: relative;
+}
 
-    .docs-col-w-277,
-    .docs-col-w-242,
-    .docs-col-w-302 {
-        width: calc(50% - 20px);
+.docs-tabs-col li::before {
+    background-color: #0971b8;
+    border-radius: 50%;
+    content: "";
+    height: 8px;
+    left: -2px;
+    position: absolute;
+    top: 6px;
+    width: 8px;
+}
+
+.docs-tabs-li-text {
+    display: inline;
+    vertical-align: baseline;
+}
+
+.docs-tabs-leaf {
+    bottom: 0px;
+    /* max-height: 85%; */
+    object-fit: contain;
+    object-position: 100% 100%;
+    pointer-events: none;
+    position: absolute;
+    right: 40px;
+    /* width: min(52%, 420px); */
+    z-index: 0;
+}
+
+@media (max-width: 1200px) {
+    .docs-tabs-list-row {
+        column-gap: 24px;
     }
 }
 
 @media (max-width: 900px) {
-
-    .docs-col-w-277,
-    .docs-col-w-242,
-    .docs-col-w-302 {
-        width: 100%;
+    .docs-tabs-list-row {
+        grid-template-columns: 1fr;
     }
 }
 
-.docs-accordion-shell--mobile {
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
+@media (max-width: 767px) {
+    .docs-tabs-shell {
+        border-radius: 20px;
+        flex-direction: column;
+        min-height: 0;
+    }
 
-.docs-accordion-panel--mobile-active {
-    background: #0067b9;
-    border-top: 1px solid rgba(255, 255, 255, .22);
-    padding: 14px 14px 0;
-}
+    .docs-tabs-nav {
+        border-bottom: 1px solid #e4e4e4;
+        border-right: none;
+        flex: none;
+        max-width: none;
+        min-width: 0;
+        width: 100%;
+    }
 
-.docs-accordion-shell--mobile>.docs-accordion-panel--mobile-active:first-child {
-    border-top: none;
-}
+    .docs-tabs-nav-item {
+        border-bottom: 1px solid #e8e8e8;
+        flex: none;
+        min-height: 52px;
+    }
 
-.docs-accordion-mobile-header {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-}
+    .docs-tabs-panel-desktop {
+        display: none !important;
+    }
 
-.docs-accordion-mobile-title {
-    color: #fff;
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.3;
-}
+    .docs-tabs-nav .docs-tabs-panel {
+        border-radius: 0;
+        border-top: 1px solid #e4e4e4;
+        flex: 0 0 auto;
+        margin: 0;
+        min-height: 260px;
+        padding: 24px 22px 120px 18px;
+        width: 100%;
+    }
 
-.docs-accordion-mobile-icon {
-    height: 32px;
-    width: 32px;
-    flex: none;
-}
+    .docs-tabs-panel-title {
+        font-size: 18px;
+        letter-spacing: -0.4px;
+        line-height: 130%;
+    }
 
-.docs-accordion-mobile-list {
-    color: #fff;
-    font-family: Inter;
-    font-size: 12px;
-    line-height: 1.35;
-    margin-top: 10px;
-    padding-bottom: 90px;
-}
+    .docs-tabs-col {
+        font-size: 16px;
+        letter-spacing: 0.16px;
+        line-height: 135%;
+    }
 
-.docs-accordion-mobile-leaf {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    width: 65%;
-    max-width: 260px;
-}
-
-.docs-accordion-rail--mobile {
-    background: #0067b9;
-    border-top: 1px solid rgba(255, 255, 255, .22);
-    padding: 12px 14px;
-}
-
-.docs-accordion-mobile-row {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-.docs-accordion-mobile-row-label {
-    color: #fff;
-    font-family: Inter;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 1.3;
+    .docs-tabs-leaf {
+        bottom: 0px;
+        right: 14px;
+        width: min(75%, 320px);
+    }
 }
 
 /* FAQ section */
@@ -6729,20 +6902,6 @@ html {
         margin-top: 24px;
     }
 
-    .docs-accordion-mobile-leaf {
-        max-width: 200px;
-    }
-
-    .docs-accordion-mobile-icon {
-        width: 20px;
-        height: 20px;
-    }
-
-    .docs-accordion-mobile-row-label {
-        font-size: 16px;
-    }
-
-
     .about-apex-inner {
         min-height: auto;
         padding: 16px;
@@ -6951,6 +7110,78 @@ html {
 
     .hero-split--bg-right {
         background-position: left center !important;
+    }
+}
+
+/* Home page hero carousel — aligned with hero copy / below CTA (same inset as .pl-[80px] on .hero-copy) */
+.hero-carousel-nav {
+    position: absolute;
+    left: 80px;
+    bottom: 36px;
+    transform: none;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    pointer-events: auto;
+}
+
+.hero-carousel-slides {
+    position: relative;
+    min-height: 548px;
+}
+
+.hero-carousel-slide {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-carousel-slide.hero-carousel-slide--active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.hero-carousel-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: #fff;
+    opacity: 0.55;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    transition: width 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+
+.hero-carousel-indicator.is-active {
+    width: 32px;
+    height: 8px;
+    border-radius: 9999px;
+    background: #fff;
+    opacity: 1;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.hero-carousel-indicator:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+@media (max-width: 1024px) {
+    .hero-carousel-nav {
+        left: 28px;
+        bottom: 28px;
     }
 }
 
@@ -7764,6 +7995,42 @@ html {
     z-index: 30;
 }
 
+/* Header logos: arbitrary Tailwind sizes (e.g. h-[44px]) are not in this bundle, so size marks explicitly */
+.header-brand {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    gap: 16px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.desktop-navbar .header-brand {
+    max-height: 52px;
+}
+
+.desktop-navbar .header-brand img {
+    display: block;
+    flex-shrink: 0;
+    height: auto;
+    max-height: 48px;
+    object-fit: contain;
+    object-position: left center;
+    width: auto;
+}
+
+.desktop-navbar .header-brand img:first-of-type {
+    max-width: 140px;
+}
+
+.desktop-navbar .header-brand img:last-of-type {
+    max-width: 280px;
+}
+
+.mobile-brand .header-brand {
+    gap: 8px;
+    max-height: 40px;
+}
 
 .nav-dropdown-menu a {
     border-radius: 8px;
@@ -7821,7 +8088,15 @@ html {
 
 .mobile-brand img {
     height: 40px;
+    max-height: 40px;
+    object-fit: contain;
+    object-position: left center;
     width: auto;
+}
+
+.mobile-brand .header-brand img {
+    flex: 0 1 auto;
+    max-width: min(47%, 190px);
 }
 
 .mobile-brand {
@@ -7959,13 +8234,14 @@ body.drawer-open .mobile-drawer {
 
 }
 
-/* Clean refactor: loan products section */
+/* Clean refactor: loan products section
+   Desktop widths use flex (transition-friendly). Grid track transitions often
+   skip interpolation when the first column toggles with .collapsed / clones. */
 .loan-products-grid {
     align-items: stretch;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 16px;
-    grid-template-columns: minmax(0, 2.5fr) repeat(3, minmax(0, .80fr));
-    transition: grid-template-columns 300ms ease-in-out;
 }
 
 .loan-main-card {
@@ -7975,7 +8251,7 @@ body.drawer-open .mobile-drawer {
     min-height: 380px;
     overflow: hidden;
     position: relative;
-    transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+    transition: opacity 350ms ease-in-out, transform 350ms ease-in-out;
 }
 
 .loan-main-card-bg {
@@ -7984,6 +8260,7 @@ body.drawer-open .mobile-drawer {
     opacity: .5;
     pointer-events: none;
     position: absolute;
+    transition: opacity 350ms ease-in-out, background 350ms ease-in-out, background-size 350ms ease-in-out;
 }
 
 .loan-main-card-content {
@@ -7994,23 +8271,26 @@ body.drawer-open .mobile-drawer {
     padding: 24px;
     position: relative;
     z-index: 1;
-    transition: opacity 200ms ease-in-out;
+    transition: opacity 350ms ease-in-out, transform 350ms ease-in-out;
 }
 
 .loan-main-collapsed-label {
+    bottom: 26px;
     color: #fff;
-    display: none;
     font-family: Inter;
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
     line-height: 1.15;
     margin: 0;
+    opacity: 0;
+    pointer-events: none;
     position: absolute;
     right: 20px;
     text-align: start;
-    bottom: 26px;
     transform: rotate(180deg);
+    transition: opacity 350ms ease-in-out, visibility 0ms linear 350ms;
+    visibility: hidden;
     writing-mode: vertical-rl;
     z-index: 2;
 }
@@ -8056,7 +8336,7 @@ body.drawer-open .mobile-drawer {
     overflow: hidden;
     padding: 20px 20px;
     position: relative;
-    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+    transition: background-color 350ms ease-in-out, transform 350ms ease-in-out;
 }
 
 .loan-side-card-new>p {
@@ -8069,24 +8349,8 @@ body.drawer-open .mobile-drawer {
     margin: auto 0 6px;
     text-align: start;
     transform: rotate(180deg);
+    transition: opacity 350ms ease-in-out, visibility 0ms linear 0ms;
     writing-mode: vertical-rl;
-}
-
-/* Interactive expand states */
-.loan-products-grid.active-1 {
-    grid-template-columns: minmax(0, 2.5fr) repeat(3, minmax(0, .80fr));
-}
-
-.loan-products-grid.active-2 {
-    grid-template-columns: minmax(0, .80fr) minmax(0, 2.5fr) minmax(0, .80fr) minmax(0, .80fr);
-}
-
-.loan-products-grid.active-3 {
-    grid-template-columns: minmax(0, .80fr) minmax(0, .80fr) minmax(0, 2.5fr) minmax(0, .80fr);
-}
-
-.loan-products-grid.active-4 {
-    grid-template-columns: minmax(0, .80fr) minmax(0, .80fr) minmax(0, .80fr) minmax(0, 2.5fr);
 }
 
 /* When the primary card is collapsed (another column is active), hide its content smoothly */
@@ -8104,7 +8368,10 @@ body.drawer-open .mobile-drawer {
 }
 
 .loan-main-card.collapsed .loan-main-collapsed-label {
-    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 350ms ease-in-out, visibility 0ms;
+    visibility: visible;
 }
 
 /* Side card expanded to behave like main card */
@@ -8115,6 +8382,7 @@ body.drawer-open .mobile-drawer {
     display: block;
     /* Inner .loan-main-card-content already has 24px padding (matches .loan-main-card) */
     padding: 0;
+    transition: background-color 350ms ease-in-out, padding 350ms ease-in-out;
 }
 
 .loan-side-card-new.side-expanded>p {
@@ -8122,11 +8390,12 @@ body.drawer-open .mobile-drawer {
 }
 
 .loan-side-card-new.side-expanded .loan-main-card-bg {
-    position: absolute;
-    inset: 0;
     background: url('./images/loan-bg.svg') right center/contain no-repeat;
+    inset: 0;
     opacity: .5;
     pointer-events: none;
+    position: absolute;
+    transition: opacity 350ms ease-in-out, background 350ms ease-in-out;
 }
 
 .loan-side-card-new .loan-main-card-content--clone {
@@ -8134,18 +8403,46 @@ body.drawer-open .mobile-drawer {
     position: relative;
     width: 100%;
     z-index: 1;
+    transition: opacity 350ms ease-in-out;
+}
+
+/* Desktop drawer: placed after .side-expanded / .collapsed so flex + transitions are not overridden.
+   flex-grow animates more reliably than the flex shorthand in several engines. */
+@media (min-width: 1025px) {
+    .loan-products-grid {
+        flex-direction: row;
+    }
+
+    .loan-main-card {
+        flex-basis: 0%;
+        flex-grow: 2.5;
+        flex-shrink: 1;
+        min-width: 0;
+        transition: flex-grow 350ms cubic-bezier(0.4, 0, 0.2, 1), opacity 350ms ease-in-out, transform 350ms ease-in-out;
+    }
+
+    .loan-main-card.collapsed {
+        flex-grow: 0.8;
+    }
+
+    .loan-side-card-new {
+        flex-basis: 0%;
+        flex-grow: 0.8;
+        flex-shrink: 1;
+        min-width: 0;
+        transition: flex-grow 350ms cubic-bezier(0.4, 0, 0.2, 1), background-color 350ms ease-in-out, transform 350ms ease-in-out;
+    }
+
+    .loan-side-card-new.side-expanded {
+        flex-grow: 2.5;
+        transition: flex-grow 350ms cubic-bezier(0.4, 0, 0.2, 1), background-color 350ms ease-in-out, padding 350ms ease-in-out, transform 350ms ease-in-out;
+    }
 }
 
 @media (max-width: 1024px) {
     .loan-products-grid {
+        display: grid;
         gap: 16px;
-        grid-template-columns: 1fr;
-    }
-
-    .loan-products-grid.active-1,
-    .loan-products-grid.active-2,
-    .loan-products-grid.active-3,
-    .loan-products-grid.active-4 {
         grid-template-columns: 1fr;
     }
 
