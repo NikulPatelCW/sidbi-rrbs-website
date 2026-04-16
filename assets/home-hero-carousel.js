@@ -3,8 +3,7 @@
   if (!root) return;
 
   var slides = root.querySelectorAll("[data-hero-slide]");
-  var tabs = root.querySelectorAll("[data-hero-tab]");
-  if (!slides.length || !tabs.length) return;
+  if (!slides.length) return;
 
   var current = 0;
   var timer = null;
@@ -20,11 +19,15 @@
       slide.setAttribute("aria-hidden", active ? "false" : "true");
     });
 
-    tabs.forEach(function (tab, i) {
+    root.querySelectorAll("[data-hero-tab]").forEach(function (tab) {
+      var i = parseInt(tab.getAttribute("data-hero-tab"), 10);
+      if (isNaN(i)) return;
       var active = i === current;
+      var slideEl = tab.closest(".hero-carousel-slide");
+      var inActiveSlide = slideEl && slideEl.classList.contains("hero-carousel-slide--active");
       tab.classList.toggle("is-active", active);
       tab.setAttribute("aria-selected", active ? "true" : "false");
-      tab.setAttribute("tabindex", active ? "0" : "-1");
+      tab.setAttribute("tabindex", active && inActiveSlide ? "0" : "-1");
     });
   }
 
@@ -44,8 +47,10 @@
     }
   }
 
-  tabs.forEach(function (tab, i) {
+  root.querySelectorAll("[data-hero-tab]").forEach(function (tab) {
     tab.addEventListener("click", function () {
+      var i = parseInt(tab.getAttribute("data-hero-tab"), 10);
+      if (isNaN(i)) return;
       show(i);
       stopAutoplay();
       startAutoplay();

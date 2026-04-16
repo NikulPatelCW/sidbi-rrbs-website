@@ -1036,8 +1036,12 @@ body {
         margin-top: 16px
     }
 
+    .mt-\[24px\] {
+        margin-top: 24px
+    }
+
     .mt-\[32px\] {
-        margin-top: 32px
+        margin-top: 32px !important
     }
 
     .mt-\[70px\] {
@@ -3180,6 +3184,10 @@ body {
 
     .text-\[32px\] {
         font-size: 32px
+    }
+    /* 40px */
+    .text-\[40px\] {
+        font-size: 40px
     }
 
     .text-\[48px\] {
@@ -6452,7 +6460,7 @@ html {
 .faq-heading {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
     align-items: center;
     text-align: center;
 }
@@ -6535,7 +6543,7 @@ html {
 
 .site-footer-inner {
     width: 100%;
-    padding: 48px 156px;
+    padding: 48px 18px;
 }
 
 .site-footer-top {
@@ -6631,6 +6639,63 @@ html {
     white-space: nowrap;
 }
 
+.page-breadcrumb {
+    width: 100%;
+}
+
+.page-breadcrumb__inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.page-breadcrumb__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.page-breadcrumb__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+.page-breadcrumb__item:not(:last-child)::after {
+    content: ">";
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.page-breadcrumb__item--current {
+    color: #333;
+    font-weight: 600;
+}
+
+.page-breadcrumb__item:not(.page-breadcrumb__item--current) {
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.page-breadcrumb__link {
+    color: #9ca3af;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.page-breadcrumb__link:hover {
+    color: #6b7280;
+    /* text-decoration: underline; */
+}
+
 .about-mission-section {
     width: 100%;
     margin-top: 100px;
@@ -6654,7 +6719,6 @@ html {
     border-radius: 20px;
     padding: 34px 34px 30px;
     min-height: 315px;
-    background-color: #cdeaff;
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: auto 92%;
@@ -6662,14 +6726,19 @@ html {
     flex-direction: column;
     align-items: start;
     gap: 15px;
+    h2, p {
+        max-width: 450px;
+    } 
 }
 
 .about-mission-card-sidbi {
-    background-image: url("./images/about/sidbi-bg.svg");
+    background-image: url("./images/about/sidbi-bg.svg");    
+    background-color: #cdeaff;
 }
 
 .about-mission-card-rrb {
     background-image: url("./images/about/rural-bg.svg");
+    background-color: #D1FCD1;
 }
 
 .about-mission-logo {
@@ -6684,8 +6753,8 @@ html {
 }
 
 .about-apex-inner {
-    max-width: 1440px;
-    margin: 0 auto;
+    /* max-width: 1440px; */
+    /* margin: 0 auto; */
     border-radius: 12px;
     background-image: url("./images/about/apex-bg.png");
     background-size: cover;
@@ -6711,14 +6780,115 @@ html {
 
 .about-apex-card {
     width: 100%;
-    max-width: 630px;
+    max-width: 660px;
     background: #fff;
     border-radius: 12px;
-    padding: 28px 26px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+}
+
+/*
+ * About page — institution intro panels (SIDBI + RRB apex cards only).
+ * All selectors are scoped under .about-institution-intro so other .about-apex-card blocks stay unchanged.
+ */
+.about-apex-card.about-institution-intro {
+    gap: 16px;
+}
+
+.about-institution-intro__title {
+    margin: 0 0 10px;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    font-feature-settings: "liga" 0, "clig" 0;
+    font-family: Inter, sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.64px;
+}
+
+.about-institution-intro--sidbi .about-institution-intro__title {
+    color: #0059a0;
+}
+
+.about-institution-intro--rrb .about-institution-intro__title {
+    color: #1c9c1e;
+}
+
+.about-institution-intro__tagline {
+    margin: 0;
+    width: 100%;
+    color: #333;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    font-feature-settings: "liga" 0, "clig" 0;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.4px;
+}
+
+.about-institution-intro__tagline-accent {
+    font-weight: 700;
+}
+
+.about-institution-intro__body {
+    margin: 0;
+    width: 100%;
+    color: #707070;
+    font-feature-settings: "liga" 0, "clig" 0;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+.about-institution-intro__mandate {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-institution-intro__mandate-lead {
+    margin: 0;
+    width: 100%;
+    color: #707070;
+    font-feature-settings: "liga" 0, "clig" 0;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+.about-institution-intro__mandate-list {
+    margin: 0;
+    width: 100%;
+    padding-left: 1.25rem;
+    list-style-type: disc;
+    color: #707070;
+    font-feature-settings: "liga" 0, "clig" 0;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+.about-institution-intro__mandate-list li {
+    margin-top: 0.35em;
+}
+
+.about-institution-intro__mandate-list li:first-child {
+    margin-top: 0;
 }
 
 .about-stepper {
@@ -6787,29 +6957,9 @@ html {
     gap: 12px;
 }
 
-.about-tech-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    min-height: 145px;
-}
-
-.about-tech-icon {
-    width: 36px;
-    height: 36px;
-    flex: 0 0 36px;
-    margin-bottom: 8px;
-}
-
-.about-tech-card .initiative-copy {
-    display: block;
-    gap: 0;
-}
-
 @media (max-width: 1200px) {
     .site-footer-inner {
-        padding: 40px 48px;
+        padding: 40px 18px;
     }
 
     .site-footer-top,
@@ -6845,7 +6995,7 @@ html {
 
     .about-apex-card {
         max-width: 580px;
-        padding: 22px 20px;
+        padding: 35px;
     }
 
     .about-stepper {
@@ -6862,12 +7012,8 @@ html {
         gap: 14px;
     }
 
-    .about-mission-logo {
-        height: 44px;
-    }
-
     .site-footer-inner {
-        padding: 36px 28px;
+        padding: 36px 18px;
     }
 
     .site-footer-top {
@@ -6910,7 +7056,7 @@ html {
 
     .about-apex-card {
         max-width: 100%;
-        padding: 18px 16px;
+        padding: 15px;
     }
 
     .about-stepper {
@@ -6957,11 +7103,11 @@ html {
     }
 
     .about-mission-logo {
-        height: 34px;
+        height: 44px;
     }
 
     .site-footer-inner {
-        padding: 28px 16px;
+        padding: 28px 18px;
     }
 
     .site-footer-top {
@@ -7113,18 +7259,39 @@ html {
     }
 }
 
-/* Home page hero carousel — aligned with hero copy / below CTA (same inset as .pl-[80px] on .hero-copy) */
+/* Loan product heroes — green page title above main headline */
+.business-loans-hero-page-title,
+.machine-loans-hero-page-title,
+.property-loan-hero-page-title,
+.working-capital-hero-page-title,
+.loan-process-hero-page-title {
+    margin: 0;
+    color: #7dee7e;
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    font-feature-settings: "liga" 0, "clig" 0;
+    leading-trim: both;
+    text-edge: cap;
+}
+
+/* Home page hero carousel — stacked under Apply inside .hero-actions (same padding as hero copy) */
 .hero-carousel-nav {
-    position: absolute;
-    left: 80px;
-    bottom: 36px;
+    position: relative;
+    left: auto;
+    bottom: auto;
     transform: none;
-    z-index: 10;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
     pointer-events: auto;
+    flex-shrink: 0;
+    margin: 0;
+    padding-top:40px;
 }
 
 .hero-carousel-slides {
@@ -7178,12 +7345,6 @@ html {
     outline-offset: 3px;
 }
 
-@media (max-width: 1024px) {
-    .hero-carousel-nav {
-        left: 28px;
-        bottom: 28px;
-    }
-}
 
 /* Loan process: digital journey section */
 .loan-journey-section {
@@ -7195,7 +7356,7 @@ html {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 18px;
     display: flex;
     flex-direction: column;
     gap: 28px;
@@ -7204,7 +7365,7 @@ html {
 .loan-journey-heading {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 24px;
     align-items: center;
     text-align: center;
 }
@@ -7308,11 +7469,18 @@ html {
     margin-top: 1px;
     flex-shrink: 0;
 }
+.loans-breadcrumb{
+    position: absolute;
+    top:30px;
+    left:18px;
+}
 
 @media (max-width: 1024px) {
-    .loan-journey-shell {
-        padding: 0 20px;
+    .loans-breadcrumb{
+        top:5px;
+        left:29px;
     }
+   
 
     .loan-journey-grid {
         grid-template-columns: 1fr;
@@ -7328,9 +7496,7 @@ html {
         margin-top: 70px;
     }
 
-    .loan-journey-shell {
-        padding: 0 16px;
-    }
+    
 
     .loan-journey-card {
         padding: 10px;
@@ -7956,31 +8122,59 @@ html {
 }
 
 .explore-loans-card {
-    background: #c4e4ff;
+    background: #C4E4FF;
     border-radius: 12px;
-    color: #2b2b2b;
+    color: #333333;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
     min-height: 76px;
     padding: 0 20px;
     text-decoration: none;
 }
 
-.explore-loans-card span {
+.explore-loans-card__lead {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    gap: 14px;
+    min-width: 0;
+}
+
+.explore-loans-card__icon {
+    align-items: center;
+    background: #0971B8;
+    border-radius: 50%;
+    display: flex;
+    flex-shrink: 0;
+    height: 48px;
+    justify-content: center;
+    width: 48px;
+}
+
+.explore-loans-card__icon img {
+    display: block;
+    height: auto;
+    max-height: 24px;
+    max-width: 24px;
+    object-fit: contain;
+    width: auto;
+}
+
+.explore-loans-card__title {
     color: #333;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
-    line-height: 100%;
-    /* 20px */
+    line-height: 1.2;
 }
 
-.explore-loans-card img {
-    width: 20px;
-    height: 20px;
+.explore-loans-card__arrow {
     flex-shrink: 0;
+    height: 20px;
+    width: 20px;
 }
 
 @media (max-width: 1024px) {
@@ -8000,7 +8194,7 @@ html {
     align-items: center;
     display: flex;
     flex-shrink: 0;
-    gap: 16px;
+    gap: 8px;
     min-height: 0;
     overflow: hidden;
 }
@@ -8028,7 +8222,7 @@ html {
 }
 
 .mobile-brand .header-brand {
-    gap: 8px;
+    gap: 4px;
     max-height: 40px;
 }
 
@@ -8548,7 +8742,7 @@ body.drawer-open .mobile-drawer {
 
 /* Contact page */
 .contact-hero {
-    margin-top: 60px;
+    margin-top: 30px;
     padding: 0 20px;
     width: 100%;
 }
@@ -8562,7 +8756,7 @@ body.drawer-open .mobile-drawer {
 }
 
 .contact-info-card {
-    background: #cfe9ff;
+    background: #d1e9ff;
     border-radius: 16px;
     margin-top: 28px;
     max-width: 1360px;
@@ -8627,9 +8821,7 @@ body.drawer-open .mobile-drawer {
 }
 
 @media (max-width: 768px) {
-    .contact-hero {
-        margin-top: 32px;
-    }
+   
 
     .contact-info-card {
         padding: 14px 16px;
@@ -8653,78 +8845,85 @@ body.drawer-open .mobile-drawer {
 }
 
 .contact-message-inner {
-    display: grid;
-    gap: 40px;
-    grid-template-columns: 1fr 1.4fr;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
     margin: 0 auto;
-    max-width: 1440px;
+    max-width: 1360px;
 }
 
-.contact-map-panel {
-    border-radius: 16px;
-    min-height: 320px;
-    overflow: hidden;
-    position: relative;
-}
-
-.contact-map-panel iframe {
-    border: 0;
-    height: 100%;
-    min-height: 320px;
+.contact-banks-wrap {
+    overflow-x: auto;
     width: 100%;
 }
 
-.contact-map-overlay {
-    background: #fff;
-    border-radius: 12px;
-    bottom: 12px;
-    box-shadow: 0 8px 24px rgba(22, 31, 48, 0.16);
-    left: 12px;
-    max-width: 340px;
-    padding: 12px;
-    position: absolute;
+.contact-banks-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
 }
 
-.contact-map-title {
-    color: #2b2b2b;
-    font-family: Inter;
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 1.1;
-}
-
-.contact-map-address {
-    color: #4e4e4e;
-    font-family: Inter;
-    font-size: 14px;
-    line-height: 1.35;
-    margin-top: 6px;
-    padding-right: 64px;
-}
-
-.contact-map-actions {
-    bottom: 12px;
-    display: flex;
-    gap: 6px;
-    position: absolute;
-    right: 12px;
-}
-
-.contact-map-actions button {
-    align-items: center;
-    background: #2d3137;
+.contact-banks-table thead th {
+    background: #5cb85d;
     border: none;
-    border-radius: 50%;
     color: #fff;
-    cursor: pointer;
-    display: inline-flex;
-    height: 24px;
-    justify-content: center;
-    width: 24px;
+    font-weight: 600;
+    padding: 14px 16px;
+    text-align: left;
+}
+
+.contact-banks-table thead th:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+.contact-banks-table thead th:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+.contact-banks-table tbody th,
+.contact-banks-table tbody td {
+    background: #fff;
+    border: none;
+    border-top: 1px solid #b8daf5;
+    color: #333;
+    font-family: Inter, sans-serif;
+    font-feature-settings: "liga" 0, "clig" 0;
+    font-size: 20px;
+    font-style: normal;
+    leading-trim: both;
+    line-height: 140%;
+    padding: 36px 16px;
+    text-align: left;
+    text-edge: cap;
+}
+
+.contact-banks-table tbody th {
+    font-weight: 700;
+}
+
+.contact-banks-table tbody td {
+    font-weight: 400;
+}
+
+.contact-banks-table tbody tr:first-child th,
+.contact-banks-table tbody tr:first-child td {
+    border-top: none;
+}
+
+.contact-banks-table a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-banks-table a:hover {
+    color: #111;
 }
 
 .contact-form-panel {
+    align-self: center;
     background: #fff;
+    max-width: 1062px;
+    width: 100%;
 }
 
 .contact-form-title {
@@ -8734,6 +8933,7 @@ body.drawer-open .mobile-drawer {
     font-weight: 400;
     letter-spacing: -0.88px;
     line-height: 1.2;
+    text-align: center;
 }
 
 .contact-form-title span {
@@ -8768,13 +8968,21 @@ body.drawer-open .mobile-drawer {
 }
 
 .contact-form-grid input.contact-input--error,
-.contact-form-grid textarea.contact-input--error {
+.contact-form-grid textarea.contact-input--error,
+.contact-form-grid select.contact-input--error {
     background: #fff8f8;
     border-color: #c62828;
 }
 
+.contact-form-field:has(#contact-bank.contact-input--error) .contact-combobox-trigger {
+    background-color: #fff8f8;
+    border-color: #c62828;
+}
+
 .contact-form-actions {
+    display: flex;
     grid-column: span 2;
+    justify-content: flex-end;
     margin-top: 4px;
 }
 
@@ -8796,16 +9004,137 @@ body.drawer-open .mobile-drawer {
 }
 
 .contact-form-grid input,
-.contact-form-grid textarea {
+.contact-form-grid textarea,
+.contact-form-grid select {
     background: #f9f9f9;
-    border: 1px solid transparent;
+    border: 1px solid #F2F2F3;
     border-radius: 12px;
     color: #2b2b2b;
     font-family: Inter;
     font-size: 14px;
     line-height: 1.2;
     outline: none;
-    padding: 14px 16px;
+    padding: 16px 20px;
+}
+
+.contact-form-grid select {
+    appearance: none;
+    cursor: pointer;
+    padding-right: 40px;
+}
+
+.contact-select-wrap {
+    display: block;
+    min-width: 0;
+    position: relative;
+}
+
+.contact-select-wrap.is-open {
+    z-index: 30;
+}
+
+.contact-combobox-trigger {
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #F2F2F3;
+    border-radius: 12px;
+    box-sizing: border-box;
+    color: #2b2b2b;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    outline: none;
+    padding: 16px 40px 16px 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.contact-combobox-label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contact-combobox-label--placeholder {
+    color: #707070;
+}
+
+.contact-combobox-list {
+    background: #fff;
+    border: 1px solid rgba(9, 113, 184, 0.22);
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+    left: 0;
+    list-style: none;
+    margin: 6px 0 0;
+    max-height: min(280px, 50vh);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 6px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 40;
+}
+
+.contact-combobox-option {
+    border-radius: 8px;
+    color: #2b2b2b;
+    cursor: pointer;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 1.25;
+    margin: 0;
+    padding: 12px 14px;
+    transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.contact-combobox-option:hover {
+    background-color: rgba(9, 113, 184, 0.12);
+}
+
+.contact-combobox-option--active {
+    background-color: rgba(9, 113, 184, 0.2);
+}
+
+.contact-combobox-option[aria-selected="true"] {
+    background-color: rgba(9, 113, 184, 0.08);
+    font-weight: 600;
+}
+
+.contact-combobox-option[aria-selected="true"].contact-combobox-option--active {
+    background-color: rgba(9, 113, 184, 0.2);
+}
+
+.contact-select-wrap::after {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%230971B8' d='M1.41 0 6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E") no-repeat center;
+    background-size: 12px 8px;
+    content: "";
+    height: 8px;
+    margin-top: -4px;
+    pointer-events: none;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform-origin: 50% 50%;
+    transition: transform 0.2s ease;
+    width: 12px;
+}
+
+.contact-select-wrap.is-open::after {
+    transform: rotate(180deg);
+}
+
+.contact-form-grid select:invalid {
+    color: #707070;
+}
+
+.contact-form-grid select option {
+    color: #2b2b2b;
 }
 
 .contact-form-grid textarea {
@@ -8813,14 +9142,16 @@ body.drawer-open .mobile-drawer {
 }
 
 .contact-form-grid input:focus,
-.contact-form-grid textarea:focus {
-    border-color: #0971b8;
-    background: #fff;
+.contact-form-grid textarea:focus,
+.contact-form-grid select:focus,
+.contact-combobox-trigger:focus {
+    background-color: #fff;
+    border-color: #0971B8;
 }
 
 .contact-submit-btn {
     align-items: center;
-    background: #0971b8;
+    background: #0971B8;
     border: none;
     border-radius: 999px;
     color: #fff;
@@ -8835,14 +9166,25 @@ body.drawer-open .mobile-drawer {
     width: fit-content;
 }
 
-@media (max-width: 1024px) {
-    .contact-message-inner {
-        grid-template-columns: 1fr;
-    }
+.contact-submit-btn:hover {
+    background: #075f99;
+}
 
+.contact-submit-btn:focus-visible {
+    outline: 2px solid #0971B8;
+    outline-offset: 2px;
+}
+
+@media (max-width: 1024px) {
     .contact-form-title {
         font-size: 30px;
         letter-spacing: -0.68px;
+    }
+
+    .contact-banks-table thead th,
+    .contact-banks-table tbody th,
+    .contact-banks-table tbody td {
+        padding: 12px 10px;
     }
 }
 

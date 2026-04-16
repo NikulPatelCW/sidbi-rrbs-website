@@ -1,22 +1,4 @@
 (function () {
-  var MAP_DEST = "19.060638,72.865349";
-  var MAP_SEARCH_URL =
-    "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(MAP_DEST);
-  var MAP_DIR_URL =
-    "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(MAP_DEST);
-  var SHARE_TITLE = "SIDBI — SWAVALAMBAN BHAVAN";
-  var SHARE_TEXT =
-    "SWAVALAMBAN BHAVAN, Plot No. C-11 G Block Bandra Kurla Complex, Bandra (East), Mumbai - 400051, Maharashtra";
-  function showToast(el, message) {
-    if (!el) return;
-    el.textContent = message;
-    el.hidden = false;
-    clearTimeout(el._toastTimer);
-    el._toastTimer = setTimeout(function () {
-      el.hidden = true;
-    }, 3500);
-  }
-
   function phoneDigits(value) {
     return String(value || "").replace(/\D/g, "");
   }
@@ -55,10 +37,11 @@
   function validateForm(form) {
     var ok = true;
     var nameEl = form.elements.namedItem("fullName");
+    var bankEl = form.elements.namedItem("bank");
     var phoneEl = form.elements.namedItem("phone");
     var emailEl = form.elements.namedItem("email");
 
-    [nameEl, phoneEl, emailEl].forEach(function (el) {
+    [nameEl, bankEl, phoneEl, emailEl].forEach(function (el) {
       if (el) clearFieldError(el);
     });
 
@@ -66,6 +49,14 @@
       var name = String(nameEl.value || "").trim();
       if (!name) {
         setFieldError(nameEl, "Please enter your full name.");
+        ok = false;
+      }
+    }
+
+    if (bankEl) {
+      var bank = String(bankEl.value || "").trim();
+      if (!bank) {
+        setFieldError(bankEl, "Please choose your bank.");
         ok = false;
       }
     }
@@ -89,45 +80,6 @@
     return ok;
   }
 
-  function initMapActions(toastEl) {
-    var dirBtn = document.getElementById("contact-map-directions");
-    var shareBtn = document.getElementById("contact-map-share");
-    if (dirBtn) {
-      dirBtn.addEventListener("click", function () {
-        window.open(MAP_DIR_URL, "_blank", "noopener,noreferrer");
-      });
-    }
-    if (shareBtn) {
-      shareBtn.addEventListener("click", function () {
-        var sharePayload = { title: SHARE_TITLE, text: SHARE_TEXT, url: MAP_SEARCH_URL };
-
-        if (navigator.share) {
-          navigator.share(sharePayload).catch(function (err) {
-            if (err && err.name === "AbortError") return;
-            fallbackShare(toastEl);
-          });
-        } else {
-          fallbackShare(toastEl);
-        }
-      });
-    }
-  }
-
-  function fallbackShare(toastEl) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(MAP_SEARCH_URL).then(
-        function () {
-          showToast(toastEl, "Map link copied to clipboard.");
-        },
-        function () {
-          window.open(MAP_SEARCH_URL, "_blank", "noopener,noreferrer");
-        }
-      );
-    } else {
-      window.open(MAP_SEARCH_URL, "_blank", "noopener,noreferrer");
-    }
-  }
-
   var PHONE_MAX_DIGITS = 15;
 
   function sanitizePhoneInput(phoneEl) {
@@ -146,7 +98,163 @@
     }
   }
 
-  function initContactForm(toastEl) {
+  function initContactBankCombobox(form) {
+    var bankWrap = form.querySelector("#contact-bank-wrap");
+    var bankInput = form.querySelector("#contact-bank");
+    var trigger = form.querySelector("#contact-bank-trigger");
+    var list = form.querySelector("#contact-bank-listbox");
+    var label = form.querySelector("#contact-bank-label");
+    if (!bankWrap || !bankInput || !trigger || !list || !label) return;
+
+    var options = Array.prototype.slice.call(list.querySelectorAll('[role="option"]'));
+    var listOpen = false;
+    var activeIdx = -1;
+
+    function setListOpen(isOpen) {
+      listOpen = !!isOpen;
+      bankWrap.classList.toggle("is-open", listOpen);
+      trigger.setAttribute("aria-expanded", listOpen ? "true" : "false");
+      list.hidden = !listOpen;
+      if (!listOpen) {
+        activeIdx = -1;
+        trigger.removeAttribute("aria-activedescendant");
+        options.forEach(function (opt) {
+          opt.classList.remove("contact-combobox-option--active");
+        });
+      }
+    }
+
+    function setActiveIndex(idx) {
+      if (idx < 0 || idx >= options.length) {
+        activeIdx = -1;
+        trigger.removeAttribute("aria-activedescendant");
+        options.forEach(function (opt) {
+          opt.classList.remove("contact-combobox-option--active");
+        });
+        return;
+      }
+      activeIdx = idx;
+      options.forEach(function (opt, i) {
+        opt.classList.toggle("contact-combobox-option--active", i === idx);
+      });
+      var act = options[idx];
+      if (act && act.id) trigger.setAttribute("aria-activedescendant", act.id);
+      if (act && act.scrollIntoView) act.scrollIntoView({ block: "nearest" });
+    }
+
+    function selectValue(value, text) {
+      bankInput.value = value;
+      if (value) {
+        label.textContent = text;
+        label.classList.remove("contact-combobox-label--placeholder");
+      } else {
+        label.textContent = "Choose your bank";
+        label.classList.add("contact-combobox-label--placeholder");
+      }
+      options.forEach(function (opt) {
+        var v = opt.getAttribute("data-value") || "";
+        opt.setAttribute("aria-selected", v === value ? "true" : "false");
+      });
+      setListOpen(false);
+      clearFieldError(bankInput);
+    }
+
+    trigger.addEventListener("click", function (e) {
+      e.preventDefault();
+      setListOpen(!listOpen);
+      if (listOpen) {
+        var current = bankInput.value;
+        var startIdx = 0;
+        for (var i = 0; i < options.length; i++) {
+          if (options[i].getAttribute("data-value") === current) {
+            startIdx = i;
+            break;
+          }
+        }
+        setActiveIndex(startIdx);
+      }
+    });
+
+    options.forEach(function (opt) {
+      opt.addEventListener("click", function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var v = opt.getAttribute("data-value") || "";
+        selectValue(v, opt.textContent.trim());
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!listOpen) return;
+      if (!bankWrap.contains(e.target)) setListOpen(false);
+    });
+
+    trigger.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        if (listOpen) {
+          setListOpen(false);
+          e.preventDefault();
+        }
+        return;
+      }
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        if (!listOpen) {
+          setListOpen(true);
+          setActiveIndex(0);
+        } else {
+          var next = activeIdx < 0 ? 0 : Math.min(options.length - 1, activeIdx + 1);
+          setActiveIndex(next);
+        }
+        return;
+      }
+      if (e.key === "ArrowUp") {
+        e.preventDefault();
+        if (!listOpen) {
+          setListOpen(true);
+          setActiveIndex(options.length - 1);
+        } else {
+          var prev = activeIdx <= 0 ? 0 : activeIdx - 1;
+          setActiveIndex(prev);
+        }
+        return;
+      }
+      if (e.key === "Enter" || e.key === " ") {
+        if (listOpen && activeIdx >= 0) {
+          e.preventDefault();
+          var chosen = options[activeIdx];
+          var val = chosen.getAttribute("data-value") || "";
+          selectValue(val, chosen.textContent.trim());
+        } else if (!listOpen) {
+          e.preventDefault();
+          setListOpen(true);
+          var cur = bankInput.value;
+          var j = 0;
+          for (var k = 0; k < options.length; k++) {
+            if (options[k].getAttribute("data-value") === cur) {
+              j = k;
+              break;
+            }
+          }
+          setActiveIndex(j);
+        }
+        return;
+      }
+      if (e.key === "Home" && listOpen) {
+        e.preventDefault();
+        setActiveIndex(0);
+      }
+      if (e.key === "End" && listOpen) {
+        e.preventDefault();
+        setActiveIndex(options.length - 1);
+      }
+      if (e.key === "Tab" && listOpen) {
+        setListOpen(false);
+      }
+    });
+  }
+
+  function initContactForm() {
     var form = document.getElementById("contact-form");
     if (!form) return;
 
@@ -179,26 +287,40 @@
       });
     }
 
-    form.querySelectorAll("input, textarea").forEach(function (el) {
+    initContactBankCombobox(form);
+
+    form.querySelectorAll("input, textarea, select").forEach(function (el) {
       if (el.id === "contact-phone") return;
       el.addEventListener("input", function () {
         clearFieldError(el);
       });
+      if (el.tagName === "SELECT") {
+        el.addEventListener("change", function () {
+          clearFieldError(el);
+        });
+      }
     });
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!validateForm(form)) {
         var firstInvalid = form.querySelector(".contact-input--error");
-        if (firstInvalid) firstInvalid.focus();
+        if (firstInvalid) {
+          if (firstInvalid.id === "contact-bank") {
+            var bankTrig = document.getElementById("contact-bank-trigger");
+            if (bankTrig) bankTrig.focus();
+          } else {
+            firstInvalid.focus();
+          }
+        }
         return;
       }
 
       var data = {
         fullName: String(form.elements.namedItem("fullName").value || "").trim(),
+        bank: String(form.elements.namedItem("bank").value || "").trim(),
         phone: String(form.elements.namedItem("phone").value || "").trim(),
         email: String(form.elements.namedItem("email").value || "").trim(),
-        subject: String(form.elements.namedItem("subject").value || "").trim(),
         message: String(form.elements.namedItem("message").value || "").trim()
       };
       console.log("Contact form submit", data);
@@ -206,8 +328,6 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    var toastEl = document.getElementById("contact-toast");
-    initMapActions(toastEl);
-    initContactForm(toastEl);
+    initContactForm();
   });
 })();

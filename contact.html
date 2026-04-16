@@ -14,8 +14,20 @@
   <div class="bg-white min-h-screen w-full flex flex-col items-center overflow-x-hidden" data-name="1">
     <div class="bg-white overflow-clip w-full">
       <div id="site-header"></div>
+      <nav class="page-breadcrumb" aria-label="Breadcrumb">
+        <div class="about-mission-inner page-breadcrumb__inner">
+          <ol class="page-breadcrumb__list">
+            <li class="page-breadcrumb__item">
+              <a class="page-breadcrumb__link" href="./index.html">Home</a>
+            </li>
+            <li class="page-breadcrumb__item page-breadcrumb__item--current" aria-current="page">
+              Contact Us
+            </li>
+          </ol>
+        </div>
+      </nav>
 
-      
+
 
       <!-- title section -->
       <section class="contact-hero">
@@ -29,70 +41,74 @@
             Reach out to us for any inquiries or assistance—we’re just a message or call away!
           </p>
 
-          <div class="contact-info-card">
-            <div class="contact-info-row">
-              <div class="contact-info-item">
-                <img src="./assets/images/envelope.svg" alt="Email" class="contact-info-icon">
-                <div>
-                  <p class="contact-info-label">Our Email Id</p>
-                  <p class="contact-info-value">
-                    help@sidbirrbcla.in
-                  </p>
-                </div>
-              </div>
 
-              <!-- <div class="contact-info-divider"></div> -->
-
-              <div class="contact-info-item">
-                <img src="./assets/images/map.svg" alt="Location" class="contact-info-icon">
-                <div>
-                  <p class="contact-info-label">Our Location</p>
-                  <p class="contact-info-value">
-                    SWAVALAMBAN BHAVAN, Plot No. C-11 G Block Bandra Kurla Complex, Bandra (East), Mumbai - 400051, Maharashtra
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       <section class="contact-message-section">
         <div class="contact-message-inner">
-          <div class="contact-map-panel">
-            <iframe
-              title="SIDBI Location Map"
-              src="https://maps.google.com/maps?hl=en&q=19.060638%2C72.865349%20(SIDBI)&z=17&output=embed"
-              loading="lazy"
-              style="border:0; width:100%; height:100%; border-radius:12px;"
-              allowfullscreen=""
-              aria-hidden="false"
-              tabindex="0"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-            <div class="contact-map-overlay">
-              <p class="contact-map-title">SIDBI</p>
-              <p class="contact-map-address">
-                SWAVALAMBAN BHAVAN, Plot No. C-11 G Block
-                Bandra Kurla Complex, Bandra (East), Mumbai - 400051, Maharashtra
-              </p>
-              <div class="contact-map-actions">
-                <button type="button" id="contact-map-directions" aria-label="Open directions in Google Maps">
-                    <img src="./assets/images/mapPin.svg" alt="" class="size-[16px]" width="16" height="16">
-                </button>
-                <button type="button" id="contact-map-share" aria-label="Share location">
-                    <img src="./assets/images/share.svg" alt="" class="size-[16px]" width="16" height="16">
-                </button>
-              </div>
-            </div>
+          <div class="contact-banks-wrap">
+            <table class="contact-banks-table">
+              <thead>
+                <tr>
+                  <th scope="col">Bank</th>
+                  <th scope="col">Website URL</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Contact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Uttar Pradesh<br /> Gramin Bank</th>
+                  <td><a href="https://upgb.bank.in/" target="_blank"
+                      rel="noopener noreferrer">https://upgb.bank.in/</a></td>
+                  <td><a href="mailto:advances.ho@upgb.bank.in">advances.ho@upgb.bank.in</a></td>
+                  <td><a href="tel:+918109217357">8109217357</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Maharashtra<br /> Gramin Bank</th>
+                  <td><a href="https://www.mahagramin.bank.in/" target="_blank"
+                      rel="noopener noreferrer">https://www.mahagramin.bank.in/</a></td>
+                  <td><a href="mailto:hocredit@mahagramin.co.in">hocredit@mahagramin.co.in</a></td>
+                  <td><a href="tel:+917387444596">7387444596</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Rajasthan<br /> Gramin Bank</th>
+                  <td><a href="http://rgb.bank.in/" target="_blank" rel="noopener noreferrer">http://rgb.bank.in/</a>
+                  </td>
+                  <td><a href="mailto:loans@rgb.bank.in">loans@rgb.bank.in</a></td>
+                  <td><a href="tel:+919116176227">9116176227</a></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <div class="contact-form-panel">
             <h2 class="contact-form-title">Need help? <span>Drop us a message</span></h2>
             <form id="contact-form" class="contact-form-grid" novalidate>
               <div class="contact-form-field">
-                <input type="text" name="fullName" id="contact-fullName" placeholder="Full Name*"
-                  autocomplete="name" aria-required="true" />
+                <input type="text" name="fullName" id="contact-fullName" placeholder="Full Name*" autocomplete="name"
+                  aria-required="true" />
+                <span class="contact-field-error" role="alert" hidden></span>
+              </div>
+              <div class="contact-form-field">
+                <div class="contact-select-wrap" id="contact-bank-wrap">
+                  <input type="hidden" name="bank" id="contact-bank" value="" />
+                  <button type="button" class="contact-combobox-trigger" id="contact-bank-trigger"
+                    aria-haspopup="listbox" aria-expanded="false" aria-controls="contact-bank-listbox"
+                    aria-required="true">
+                    <span class="contact-combobox-label contact-combobox-label--placeholder"
+                      id="contact-bank-label">Choose your bank</span>
+                  </button>
+                  <ul class="contact-combobox-list" id="contact-bank-listbox" role="listbox" hidden>
+                    <li class="contact-combobox-option" id="contact-bank-opt-0" role="option"
+                      data-value="Uttar Pradesh Gramin Bank" tabindex="-1">Uttar Pradesh Gramin Bank</li>
+                    <li class="contact-combobox-option" id="contact-bank-opt-1" role="option"
+                      data-value="Maharashtra Gramin Bank" tabindex="-1">Maharashtra Gramin Bank</li>
+                    <li class="contact-combobox-option" id="contact-bank-opt-2" role="option"
+                      data-value="Rajasthan Gramin Bank" tabindex="-1">Rajasthan Gramin Bank</li>
+                  </ul>
+                </div>
                 <span class="contact-field-error" role="alert" hidden></span>
               </div>
               <div class="contact-form-field">
@@ -102,13 +118,7 @@
                 <span class="contact-field-error" role="alert" hidden></span>
               </div>
               <div class="contact-form-field">
-                <input type="email" name="email" id="contact-email" placeholder="Email"
-                  autocomplete="email" />
-                <span class="contact-field-error" role="alert" hidden></span>
-              </div>
-              <div class="contact-form-field">
-                <input type="text" name="subject" id="contact-subject" placeholder="Subject"
-                  autocomplete="off" />
+                <input type="email" name="email" id="contact-email" placeholder="Email" autocomplete="email" />
                 <span class="contact-field-error" role="alert" hidden></span>
               </div>
               <div class="contact-form-field contact-form-field--full">
